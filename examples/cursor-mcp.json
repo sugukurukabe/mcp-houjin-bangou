@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "houjin-bangou": {
+      "command": "npx",
+      "args": ["-y", "@sugukuru-labs/mcp-houjin-bangou"],
+      "env": {
+        "NTA_APPLICATION_ID": "<YOUR_APPLICATION_ID>"
+      }
+    }
+  }
+}

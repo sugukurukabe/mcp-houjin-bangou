@@ -1,0 +1,49 @@
+name: NTA API Health Check (3年無利用停止防止)
+
+on:
+  schedule:
+    # 毎週月曜の JST 10:00 (UTC 01:00) に国税庁 API へ ping
+    # 根拠: 国税庁仕様書 第一編 §5.3 + 別添1 第4条第5項 (3年間無利用で停止)
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Ping NTA houjin-bangou API
+        env:
+          NTA_APPLICATION_ID: ${{ secrets.NTA_APPLICATION_ID }}
+        run: pnpm health-check
+
+      - name: Notify on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'NTA API health check failed',
+              body: 'The weekly keep-alive ping to houjin-bangou Web-API failed. Action required to avoid 3-year dormancy suspension (第一編 §5.3).',
+              labels: ['ops', 'api-drift'],
+            });

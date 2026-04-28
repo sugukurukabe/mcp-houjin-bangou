@@ -1,0 +1,34 @@
+name: Bug report
+description: 動作不良の報告 / Report a bug
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 問題の詳細 / Description
+      description: 何が起きたか、何を期待したか
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 再現手順 / Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: バージョン / Version
+      placeholder: 'e.g. 0.1.0'
+    validations:
+      required: true
+  - type: input
+    id: host
+    attributes:
+      label: MCP Host
+      placeholder: 'e.g. Claude Desktop 0.7.x / Cursor 0.x / VS Code Copilot'
+  - type: textarea
+    id: logs
+    attributes:
+      label: ログ / Logs (機密情報は伏せてください)
+      render: shell

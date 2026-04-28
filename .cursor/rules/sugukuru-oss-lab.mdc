@@ -1,0 +1,90 @@
+---
+description: Sugukuru OSS Lab 共通開発規約 (applies to all packages under @sugukuru-labs/*)
+globs: src/**, tests/**, docs/**, scripts/**
+alwaysApply: true
+---
+
+# Sugukuru OSS Lab — 共通規約
+
+## 3言語ルール (必須)
+
+コードコメント、ドキュメント、READMEは常に **日本語 → English → Bahasa Indonesia** の順で書く。
+変数名・関数名は英語 (camelCase) のみ。git commit メッセージは日本語で OK。
+
+## プロジェクト固有のガードレール (v0.1.0 interface freeze)
+
+### Zero Placeholder
+
+- `// TODO: implement` や `// TBD` を残さない
+- 部分実装は `throw new NotImplementedError('feature', 'v0.X.0')` で明示
+
+### Interface Freeze
+
+以下は v0.1.0 freeze、v1.0.0 まで breaking change 禁止:
+
+- `src/domain/corporate-number.ts` の Zod schema (CorporateNumberSchema / CorporationSchema / AttributionSchema)
+- `src/tools/*.ts` の 5 つの Tool input/output schema
+- `src/api/nta-client.ts` の `NtaClient` interface
+- `src/server.ts` の Streamable HTTP endpoint 仕様 (POST /mcp, stateless)
+- `/.well-known/mcp.json` の Server Card 構造
+
+### Anti-Hallucination
+
+- 国税庁 API 仕様 (第一編/第二編/第六編) の値は原典を引用
+  - `type=02` = CSV UTF-8 (JIS 1-4水準)、`type=12` は **XML** であり CSV ではない
+  - 名前検索 `mode=1` 前方一致 / `mode=2` 部分一致
+  - 名前検索 `target=1` JIS 第1/2水準あいまい / `target=2` JIS 1-4水準完全一致 / `target=3` 英語
+  - 名前検索 `change=0/1` 変更履歴、`close=0/1` 登記閉鎖
+  - 最大 10 件カンマ区切り (`/4/num`)、ページング 1-99999 (`/4/diff`, `/4/name`)
+- チェックデジット計算式: `P_n` は **左から n 桁目 (1-indexed)**、奇数位置 Q_n=2 偶数位置 Q_n=1
+
+## セキュリティ (プロンプトインジェクション対策)
+
+- Tool description は静的定数のみ。ランタイム書換禁止 (`no-new-func`, `no-eval` が CI で error)
+- Tool description に `<IMPORTANT>` 等のメタ命令を含めない (CI grep で検知)
+- Application ID は `env.NTA_APPLICATION_ID` 経由のみ、tool 引数経由で受け取らない
+- すべての tool output に `attribution` 必須化 (Zod required)
+- すべてのログ出力で Application ID は `***REDACTED***` にマスク
+
+## NTA 利用規約遵守
+
+- 別添1 第9条第1項三号 (短時間大量アクセス禁止) → 1 RPS + 指数バックオフを維持
+- 別添1 第9条第1項五号 (ID 譲渡禁止) → Hosted 版ではプロキシ設計
+- 別添1 第6条 (指定出典文言) → attribution.service_disclaimer で強制
+- 別添3 公共データ利用規約 第1.0版 → attribution.license で明示
+
+## Sugukuru 業務秘密の保護
+
+以下は本 OSS に絶対持ち込まない:
+
+- 派遣業の競合分析データ
+- 特定技能ドメインの内部判定ロジック (SuguVisa 固有)
+- 顧客企業リスト
+- 個別農家・派遣スタッフの個人情報
+
+T7 normalizer の lookup table に Sugukuru 顧客データから抽出したパターンを加える際は、
+匿名化済みの「表記揺れパターンのみ」を追加し、具体的な企業名を含めない。
+
+## コミットメッセージ
+
+プレフィックス + 日本語 OK:
+
+- `feat:` 新機能
+- `fix:` バグ修正
+- `docs:` ドキュメント
+- `chore:` その他
+- `refactor:` リファクタリング
+- `test:` テスト追加
+
+## テスト方針
+
+- vitest 使用、coverage 目標 80%
+- 国税庁 API は fixture で mock (`src/api/nta-client.ts` の `fetchImpl` DI seam)
+- 本番 API への `@live` タグ付きテストは CI で skip、週次 cron で実行
+- 新しい表記揺れパターンを追加する際は `tests/unit/normalizer.test.ts` に必ずテストを追加
+
+## ドキュメント
+
+- 大きな設計変更は `docs/adr/XXXX-title.md` に Michael Nygard 形式で記録
+- ユーザー向けは README.md (英) + README.ja.md (日) 両方を常に更新
+- セキュリティ関連変更は `docs/security/prompt-injection-defense.md` も更新

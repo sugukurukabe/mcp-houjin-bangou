@@ -1,0 +1,69 @@
+{
+  "name": "@sugukuru-labs/mcp-houjin-bangou",
+  "version": "0.1.0",
+  "description": "MCP server for Japan National Tax Agency Corporate Number Web-API (Ver.4.0). Read-only, anonymous, full 7-primitive activation with deterministic company-name normalization.",
+  "protocol_version": "2025-11-25",
+  "homepage": "https://github.com/sugukuru-labs/mcp-houjin-bangou",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "/mcp",
+    "stateless": true
+  },
+  "authentication": {
+    "required": false,
+    "note": "Anonymous read-only access. v0.5.0 Hosted edition will add OAuth Client Credentials (RFC 7523 JWT Bearer) and Enterprise-Managed Authorization (ID-JAG, SEP-990)."
+  },
+  "capabilities": {
+    "tools": { "listChanged": false },
+    "resources": { "listChanged": false, "subscribe": false },
+    "completions": {},
+    "logging": {}
+  },
+  "primitives": {
+    "tools": [
+      "lookup_corporate_by_number",
+      "search_corporate_by_name",
+      "validate_corporate_number",
+      "normalize_company_name",
+      "get_attribution"
+    ],
+    "resource_templates": ["corp://{corporate_number}"],
+    "resources": ["attribution://houjin-bangou"]
+  },
+  "attribution": {
+    "data_source": "国税庁法人番号公表サイト (https://www.houjin-bangou.nta.go.jp/)",
+    "license": "公共データ利用規約 第1.0版",
+    "api_version": "Ver.4.0",
+    "service_disclaimer": "このサービスは、国税庁法人番号システム Web-API 機能を利用して取得した情報をもとに作成しているが、サービスの内容は国税庁によって保証されたものではない。"
+  },
+  "maintainer": {
+    "name": "Sugukuru K.K.",
+    "email": "engineering@sugukuru.co.jp",
+    "location": "Kagoshima, Japan",
+    "homepage": "https://sugukuru.co.jp"
+  },
+  "license": "MIT",
+  "safety": {
+    "read_only": true,
+    "destructive_operations": [],
+    "prompt_injection_mitigations": [
+      "static_tool_descriptions",
+      "no_runtime_schema_mutation",
+      "application_id_only_from_env",
+      "attribution_required_on_all_outputs",
+      "zod_strict_additional_properties_false",
+      "ci_grep_for_hidden_instructions"
+    ]
+  },
+  "specs_referenced": [
+    "MCP 2025-11-25",
+    "SEP-2127 Server Card (Draft)",
+    "SEP-1303 Input Validation as Tool Errors (Final)",
+    "SEP-986 Tool Name Format (Final)",
+    "SEP-414 OpenTelemetry Trace Context Propagation (Final)",
+    "RFC 5424 Syslog Protocol"
+  ],
+  "data_source_specs": [
+    "国税庁 法人番号 Web-API 機能 Ver.4.0 (第一編 4.9版 / 第二編 1.2版 / 第六編 1.2版)"
+  ]
+}

@@ -1,0 +1,21 @@
+name: NTA API drift / 国税庁 API 仕様変更検知
+description: 国税庁 API のレスポンスやエラーコードに変化を検出した場合
+labels: [api-drift, bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 検出内容 / What changed
+      description: レスポンスフィールド追加/削除、エラーコード変化、エンドポイント変更など
+    validations:
+      required: true
+  - type: input
+    id: spec_version
+    attributes:
+      label: 仕様書バージョン / Spec version referenced
+      placeholder: 'e.g. 第二編 1.2版 (令和3年10月)'
+  - type: textarea
+    id: sample_response
+    attributes:
+      label: 実測サンプル / Observed sample
+      render: csv

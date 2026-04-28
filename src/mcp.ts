@@ -1,0 +1,54 @@
+/**
+ * McpServer factory - all capabilities declared + all primitives registered
+ */
+
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import type { NtaClient } from './api/nta-client.js';
+import { registerAllTools } from './tools/index.js';
+import { registerAllResources } from './resources/index.js';
+import { registerCompletionHandler } from './completion/handler.js';
+import { createMcpLogger } from './lib/mcp-logger.js';
+import { SERVER_NAME, VERSION } from './version.js';
+
+export function createServer(deps: { ntaClient: NtaClient }): McpServer {
+  const mcpServer = new McpServer(
+    {
+      name: SERVER_NAME,
+      version: VERSION,
+    },
+    {
+      capabilities: {
+        tools: { listChanged: false },
+        resources: { listChanged: false, subscribe: false },
+        completions: {},
+        logging: {},
+      },
+      instructions: [
+        "This server provides access to Japan's National Corporate Number (法人番号) public database.",
+        'All operations are READ-ONLY. No write/delete/exec capabilities exist.',
+        '',
+        'Tools:',
+        '  lookup_corporate_by_number  - Look up by 13-digit corporate number (up to 10 at once)',
+        '  search_corporate_by_name    - Search by name (supports fuzzy/exact/english)',
+        '  validate_corporate_number   - Check digit validation (local, no API call)',
+        '  normalize_company_name      - Normalize fuzzy company names (complements NTA target=1)',
+        '  get_attribution             - Required attribution text for NTA API usage',
+        '',
+        'Resources:',
+        '  corp://{corporate_number}   - Corporation info as a resource',
+        '  attribution://houjin-bangou - Static attribution resource',
+        '',
+        'Attribution: All outputs include mandatory attribution per Article 6 of NTA Web-API Terms',
+        'and 公共データ利用規約 第1.0版. Source: 国税庁法人番号公表サイト (https://www.houjin-bangou.nta.go.jp/).',
+      ].join('\n'),
+    },
+  );
+
+  const logger = createMcpLogger(mcpServer.server, 'info');
+
+  registerAllTools(mcpServer, { ntaClient: deps.ntaClient, logger });
+  registerAllResources(mcpServer, { ntaClient: deps.ntaClient, logger });
+  registerCompletionHandler(mcpServer.server, { logger });
+
+  return mcpServer;
+}
