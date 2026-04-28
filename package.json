@@ -55,7 +55,8 @@
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
     "prepublishOnly": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run build",
-    "health-check": "tsx scripts/api-id-keepalive.ts"
+    "health-check": "tsx scripts/api-id-keepalive.ts",
+    "smoke": "tsx scripts/mcp-smoke.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.18.0",

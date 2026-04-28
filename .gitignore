@@ -52,3 +52,6 @@ tmp/
 
 # Cursor
 .cursor/mcp.json
+
+# cookbook-scout local candidates
+.cookbook-candidates/
