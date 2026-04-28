@@ -174,6 +174,7 @@ function buildServerCard(): object {
     capabilities: {
       tools: { listChanged: false },
       resources: { listChanged: false, subscribe: false },
+      prompts: { listChanged: false },
       completions: {},
       logging: {},
     },
@@ -185,6 +186,7 @@ function buildServerCard(): object {
         'normalize_company_name',
         'get_attribution',
       ],
+      prompts: ['business-card-to-database', 'sales-list-enrichment', 'customer-master-dedup'],
       resource_templates: ['corp://{corporate_number}'],
       resources: ['attribution://houjin-bangou'],
     },

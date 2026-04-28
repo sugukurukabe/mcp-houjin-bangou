@@ -69,9 +69,10 @@ See [`examples/`](examples/) for host-specific configs.
 Most MCP servers ship with just Tools. This one activates:
 
 - **Tools** × 5 (above)
+- **Prompts** × 3 (`business-card-to-database`, `sales-list-enrichment`, `customer-master-dedup`) — pre-built workflow templates for real-world B2B use cases
 - **Resources** (`attribution://houjin-bangou`)
 - **Resource Templates** (`corp://{corporate_number}` — fetch a corporation as a resource)
-- **Completion** — type `株式会社スグク…` and get suggestions from T7 normalizer in real-time
+- **Completion** — type `株式会社スグク…` and get suggestions from T7 normalizer in real-time; prompt argument enum completion also supported
 - **Logging** — structured RFC 5424 severity logs via `notifications/message`
 - **Pagination** — opaque cursors for the 2000+ result case (NTA spec mandates `divide`/`divideSize`)
 - **Server Card** — `/.well-known/mcp.json` per SEP-2127 Draft + Transport WG (Dec 2025) direction

@@ -69,9 +69,10 @@ https://www.invoice-kohyo.nta.go.jp/web-api/pre-reg/ から無料で発行され
 大半の MCP サーバーは Tools だけを公開しますが、本プロジェクトは公式 7 機能を全部使います:
 
 - **Tools** × 5
+- **Prompts** × 3 (`business-card-to-database` / `sales-list-enrichment` / `customer-master-dedup`) — 名刺OCRから CRM 登録、営業リスト一括 enrichment、顧客マスタ重複検知の実務ワークフローをテンプレート化
 - **Resources** (`attribution://houjin-bangou`)
 - **Resource Templates** (`corp://{corporate_number}` — 法人番号を URI として法人情報取得)
-- **Completion** — `株式会社スグク…` まで打った瞬間に T7 normalizer が候補を返す IDE 補完UX
+- **Completion** — `株式会社スグク…` まで打った瞬間に T7 normalizer が候補を返す IDE 補完UX、Prompt 引数の enum 補完も対応
 - **Logging** — RFC 5424 severity の構造化ログを `notifications/message` で配信
 - **Pagination** — 2000件超過時の opaque cursor (国税庁 `divide`/`divideSize` と変換)
 - **Server Card** — `/.well-known/mcp.json` で発見可能性 (SEP-2127 Draft + Transport WG Dec 2025)

@@ -12,22 +12,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **MCP 公式 7 機能すべて活性化** (Tools / Prompts / Resources / Resource Templates / Completion / Logging / Pagination)
 - 5 MCP Tools
   - `lookup_corporate_by_number` (T1): 13桁の法人番号で検索 (国税庁 `/4/num` API、最大10件)
   - `search_corporate_by_name` (T2): 法人名で検索 (国税庁 `/4/name` API、ページング対応)
   - `validate_corporate_number` (T3): チェックデジット検証 (ローカル計算、API 不要)
   - `get_attribution` (T6): 政府標準出典文（公共データ利用規約 第1.0版 + Web-API 機能利用規約 別添1 第6条）
   - `normalize_company_name` (T7): 国税庁 `target=1` 未対応の7パターン表記揺れ補完
-- MCP Resources + Resource Templates (`corp://{corporate_number}`)
-- MCP Completion (`completion/complete` で会社名の auto-complete、T7 駆動)
-- MCP Logging (`notifications/message`、RFC 5424 severity)
-- MCP Pagination (cursor-based、国税庁 `divide`/`divideSize` との変換)
+- 3 MCP Prompts (v0.2.0 予定から前倒し、ADR-0011)
+  - `business-card-to-database`: 名刺OCR → 正規化 → NTA照会 → CRM レコード
+  - `sales-list-enrichment`: 営業リスト一括 enrichment
+  - `customer-master-dedup`: 顧客マスタ重複検知・名寄せ
+- MCP Resources + Resource Templates (`corp://{corporate_number}`, `attribution://houjin-bangou`)
+- MCP Completion (`completion/complete` で会社名の auto-complete、T7 駆動 + Prompt 引数の enum 補完)
+- MCP Logging (`notifications/message`、RFC 5424 severity、機密情報自動 redact)
+- MCP Pagination (opaque cursor、国税庁 `divide`/`divideSize` との変換)
 - Server Card at `/.well-known/mcp.json` (SEP-2127 Draft 先行実装)
 - Streamable HTTP transport (stateless mode)
 - Zod strict schema + `attribution` 必須化 + "When NOT to use" description
-- プロンプトインジェクション防御層 (Rug Pull / Tool Shadowing / Tool Poisoning)
-- Application ID redaction + rate limiter (1 RPS + exponential backoff)
-- GitHub Actions: ci / release / codeql / dependency-review / api-health-check
+- プロンプトインジェクション防御層 (Rug Pull / Tool Shadowing / Tool Poisoning、6 層)
+- OpenTelemetry W3C TraceContext 対応 (SEP-414 準備層)
+- Application ID redaction + rate limiter (1 RPS + exponential backoff 30s→1m→5m→30m)
+- GitHub Actions: ci / release / codeql / dependency-review / api-health-check (週次 keepalive)
+- 旧字体→新字体 辞書 45+ パターン (髙/齋/﨑/邉/澤/國/團/寳/應/靑/權/氣/專/單/學/樂/...)
+- 3 Prompts 用の動作テストと Completion 補完テスト
 
 ### Attribution / 出典
 

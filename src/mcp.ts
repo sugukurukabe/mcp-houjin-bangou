@@ -6,6 +6,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type { NtaClient } from './api/nta-client.js';
 import { registerAllTools } from './tools/index.js';
 import { registerAllResources } from './resources/index.js';
+import { registerAllPrompts } from './prompts/index.js';
 import { registerCompletionHandler } from './completion/handler.js';
 import { createMcpLogger } from './lib/mcp-logger.js';
 import { SERVER_NAME, VERSION } from './version.js';
@@ -20,6 +21,7 @@ export function createServer(deps: { ntaClient: NtaClient }): McpServer {
       capabilities: {
         tools: { listChanged: false },
         resources: { listChanged: false, subscribe: false },
+        prompts: { listChanged: false },
         completions: {},
         logging: {},
       },
@@ -33,6 +35,11 @@ export function createServer(deps: { ntaClient: NtaClient }): McpServer {
         '  validate_corporate_number   - Check digit validation (local, no API call)',
         '  normalize_company_name      - Normalize fuzzy company names (complements NTA target=1)',
         '  get_attribution             - Required attribution text for NTA API usage',
+        '',
+        'Prompts (workflow templates):',
+        '  business-card-to-database   - Business card OCR → normalize → NTA lookup → CRM record',
+        '  sales-list-enrichment       - Bulk enrichment of sales lists',
+        '  customer-master-dedup       - Customer master dedup via corporate number',
         '',
         'Resources:',
         '  corp://{corporate_number}   - Corporation info as a resource',
@@ -48,6 +55,7 @@ export function createServer(deps: { ntaClient: NtaClient }): McpServer {
 
   registerAllTools(mcpServer, { ntaClient: deps.ntaClient, logger });
   registerAllResources(mcpServer, { ntaClient: deps.ntaClient, logger });
+  registerAllPrompts(mcpServer);
   registerCompletionHandler(mcpServer.server, { logger });
 
   return mcpServer;
