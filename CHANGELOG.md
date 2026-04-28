@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added (v0.3.0 準備層)
+
+- `src/domain/invoice-number.ts`: T番号 (T+13桁) Branded type + 正規化検証 (全角/半角/ハイフン/小文字T 対応)
+- `src/domain/invoice-codes.ts`: 事業者処理区分 (01/02/03/04/99) + 人格区分 (1/2) + 国内外区分 (1/2/3) + 応答形式 (01/11/21) の辞書
+- `tests/unit/invoice-number.test.ts`: 18 ケース
+- `docs/adr/0012-invoice-api-integration.md`: 適格請求書発行事業者 Web-API 統合計画 (Ver.1.0 仕様差異マトリクス含む)
+- `docs/deployment/nta-application-response.md`: 国税庁 アプリケーションID 発行申請の返信ガイド (Option A/B)
+- `docs/deployment/excel-application-fields.md`: Excel 申請書の完全な埋め込み案
+- `docs/deployment/email-template-option-a.md`: メール返信テンプレート (Option A)
+
 ## [0.1.0] - 2026-05-22
 
 ### Added

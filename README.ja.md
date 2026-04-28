@@ -116,7 +116,7 @@ https://www.invoice-kohyo.nta.go.jp/web-api/pre-reg/ から無料で発行され
 |---|---|---|
 | **v0.1.0** | 2026-05 | 5 Tool + MCP 7 機能 + Server Card |
 | v0.2.0 | 2026-06 | MCP **Prompts** (名刺→DB / 営業リストenrichment / 顧客マスタ重複) + UI Resources |
-| v0.3.0 | 2026-07 | **適格請求書発行事業者 API 統合** (T番号対応) — 同じ ID で利用可 |
+| v0.3.0 | 2026-07 | **適格請求書発行事業者 API 統合** (T番号対応、`/num` `/diff` `/valid` 3エンドポイント、CSV/XML/**JSON** 対応) — 同じ ID で利用可、v0.1.0 で T番号 Branded type + 正規化は準備済 (ADR-0012) |
 | v0.5.0 | 2026-09 | Hosted 版 + **Enterprise-Managed Authorization** (SEP-990) + **OAuth Client Credentials** + **Tasks** primitive (SEP-1699) |
 | v1.0.0 | 2026-10 | 6-host verification + Anthropic Directory submission + Skills 移行検討 |
 
