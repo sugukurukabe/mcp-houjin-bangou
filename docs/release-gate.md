@@ -90,7 +90,7 @@ Release date target: **2026-05-22**
 - [ ] Zenn 記事ドラフト完成 (`docs/articles/zenn-v0.1.0.md`)
 - [ ] Zenn 記事公開
 - [ ] X (旧 Twitter) 投稿スレッド準備
-- [ ] Fukuoka MCP Community 第3回登壇エントリー
+- [ ] v0.2.0 実装ブランチの準備
 - [ ] Sugukuru コーポレートサイトの「OSS」ページ更新
 - [ ] Slack (#30-dev) に共有
 

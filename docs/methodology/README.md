@@ -23,7 +23,7 @@
 2. MCP 公式仕様 (2025-11-25 以降の最新) + 8 設計原則 + SEP
 3. `spec-reading-checklist.md` の 7 観点で抽出
 4. 落とし穴リスト作成（他の実装者が気付いていない点）
-5. 競合 OSS inventory 15 本
+5. 既存実装の確認（比較のためではなく、重複実装を避けるため）
 
 成果物: プロジェクト設計の根拠データ全部、`docs/adr/0001〜0003` の下書き
 
@@ -59,11 +59,11 @@
 
 ### Week 5: Distribution
 
-1. Zenn / dev.to / Qiita クロスポスト
-2. HN "Show HN" 投稿（火/水 AM ET）
-3. X launch thread
-4. awesome-mcp PR
-5. 地域 MCP コミュニティ登壇エントリー
+1. README / ADR / API Reference の最終更新
+2. Zenn 記事 1 本（原文読解と実装判断の記録）
+3. release note
+4. 次 release の branch / issue 起票
+5. すぐ v0.2.0 実装へ戻る
 
 成果物: npm 公開済み + 初動 reaction 計測
 
@@ -84,7 +84,7 @@
 
 ## 哲学
 
-- **仕様書を読める人** が上級開発者の定義そのもの
+- **仕様書を読める人** は、自分の足元を他人の評価に預けない
 - **Breaking change を出さずに Interface Freeze を守れる人** が信頼される開発者
 - **テストが実際にバグを検知できる** こと（property-based + mutation）が craft の証明
 - **ADR を書ける人** が判断できる人

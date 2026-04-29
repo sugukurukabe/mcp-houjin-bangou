@@ -96,12 +96,12 @@
 - [ ] Zenn 記事が下書き完成
 - [ ] dev.to 英訳が下書き完成
 - [ ] X launch thread（日本時間 + US 時間の 2 投稿用）が下書き
-- [ ] HN "Show HN" 投稿文が下書き
-- [ ] awesome-mcp PR 用の diff を用意
-- [ ] 指名レビュー依頼の文面（5 名分）
+- [ ] release note が完成
+- [ ] 次 release の issue / branch が準備済み
+- [ ] 非露出方針に反していないか確認
 - [ ] `docs/articles/zenn-v0.1.0.md` が完成版
 - [ ] YouTube walkthrough 動画が録画済み or 予定確定
-- [ ] 地域 MCP コミュニティ登壇エントリー
+- [ ] v0.2.0 実装に戻る準備ができている
 
 ## 最終 Sanity Check（3 項目）
 

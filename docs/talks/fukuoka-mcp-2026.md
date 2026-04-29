@@ -3,7 +3,7 @@ theme: seriph
 title: "国税庁 target=1 を知り尽くして補完する MCP"
 subtitle: "@sugukuru-labs/mcp-houjin-bangou v0.1.0 から学ぶ MCP 公式 7 機能フル活性化"
 author: "壁 (スグクル株式会社 代表 / CTO)"
-date: "2026 年 6 月 (福岡 MCP Community 第 3 回)"
+date: "Private study notes, not for event participation"
 fonts:
   sans: "Inter"
   serif: "Noto Serif JP"
@@ -21,7 +21,10 @@ mdc: true
 <br />
 
 **壁** (スグクル株式会社 代表 / CTO)
-鹿児島県鹿児島市 · 2026 年 6 月
+霧島 · Private study notes
+
+> この資料は登壇用ではなく、思考を整理するための私的ノートとして残す。  
+> 露出のために移動する時間は、次の実装と次の原文読解に使う。
 
 ---
 
@@ -55,23 +58,24 @@ AI が制度の入口に立つ時代に、
 
 ---
 
-## 道筋 (50 分)
+## 道筋
 
-1. 章一: 鹿児島から始まる OSS (5 分)
-2. 章二: API ラッパーでは足りない理由 (10 分)
-3. 章三: 仕様書は 8 時間で読める (15 分)
-4. 章四: MCP 公式 7 機能を全部動かす (15 分)
-5. 終章: 上級開発者とは何を残す人か (5 分)
+1. 章一: 霧島から始まる OSS
+2. 章二: API ラッパーでは足りない理由
+3. 章三: 仕様書は 8 時間で読める
+4. 章四: MCP 公式 7 機能を全部動かす
+5. 終章: 開発者は何を残すか
 
 ---
 
-## 章一: 鹿児島から始まる OSS
+## 章一: 霧島から始まる OSS
 
 - **壁** (かべ) — スグクル株式会社 代表 / CTO
-- 鹿児島県鹿児島市
+- 名古屋から霧島へ移住して 4 年
 - 事業: インドネシア人特定技能 1 号人材派遣
 - 派遣業オペレーションの AI 化 / OSS 化を推進中
 - Sugukuru OSS Lab の創設者
+- 登壇よりも release、露出よりも原文、比較よりも実装
 
 ```
 @sugukuru-labs/mcp-houjin-bangou (本日)
@@ -140,7 +144,7 @@ layout: two-cols
 ヒット: 「株式会社ミカン商事」
 ```
 
-→ **競合 OSS 15 本のうち全員、これを重複実装していた**
+→ ここで、自分が書くべきコードの半分が消えた。
 
 ---
 
@@ -284,7 +288,7 @@ v0.5.0 (2026-09) → Hosted + Enterprise-Managed Auth (SEP-990)
 v1.0.0 (2026-10) → 6-host verification + Anthropic Directory submission
 ```
 
-各 release で Zenn / X / HN / 福岡 MCP で露出 → 継続的話題創出
+各 release で、実装・テスト・仕様書・ADR を厚くする。露出より release を積む。
 
 ---
 
@@ -308,7 +312,7 @@ docs/methodology/
 
 ---
 
-## 終章: 上級開発者とは何を残す人か
+## 終章: 開発者とは何を残すか
 
 1. **仕様書を誰よりも深く読める**
    → 連載 blog で証明 (Spec reader's notebook シリーズ)
@@ -319,7 +323,7 @@ docs/methodology/
 3. **テストが実際にバグを検知できる**
    → Property-based + Mutation testing で証明
 
-→ この 3 つを示せれば「上級開発者」認定
+→ この 3 つを積み上げる。誰かに認定されるためではなく、次の release をより強くするために。
 
 ---
 
@@ -327,8 +331,8 @@ docs/methodology/
 
 - 仕様書を 8 時間で読破 → 競合 15 本が見落とす落とし穴を発見
 - MCP 公式 7 機能フル活性化 → "reference quality" を世界で初実装
-- Tier-S craft signals → 上級開発者の craftsmanship 公開
-- 段階的話題創出 → v0.1.0 → v1.0.0 で 5 回の話題機会
+- Tier-S craft signals → craftsmanship を成果物に埋め込む
+- 段階的 release → v0.1.0 → v1.0.0 で 5 回の実装機会
 - 再利用可能な skill 化 → Sugukuru OSS Lab の創設リポとして次作以降のテンプレート
 
 GitHub: https://github.com/sugukuru-labs/mcp-houjin-bangou
@@ -356,17 +360,15 @@ AI の時代に、仕様書は古びた紙ではありません。
 
 ---
 
-## Q&A
+## 次にやること
 
-ご質問お待ちしています
+- 本番 ID で UC-1〜UC-5 を検証する
+- fast-check で property-based tests を追加する
+- benchmarks を README に載せる
+- v0.2.0 の UI Resources に戻る
+- インボイス API の `/valid` 実装に進む
 
-- 仕様書読み込みの具体的な技法
-- MCP 7 機能フル活性化の実装ノウハウ
-- Tier-S craft signals (property-based test 等) の導入方法
-- 段階的話題創出戦略
-- インボイス API 統合の準備層
-
-連絡先: engineering@sugukuru.co.jp / [@sugukurukabe](https://github.com/sugukurukabe)
+外に出るより、次を出す。
 
 ---
 

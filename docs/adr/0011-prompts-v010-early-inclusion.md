@@ -26,7 +26,7 @@ Accepted
 
 ### Positive
 
-- **MCP 公式 7 機能すべてを v0.1.0 で活性化** (Tools / Resources / Resource Templates / Prompts / Completion / Logging / Pagination)、世界初クラスの MCP サーバ
+- **MCP 公式 7 機能すべてを v0.1.0 で活性化** (Tools / Resources / Resource Templates / Prompts / Completion / Logging / Pagination)。比較のためではなく、MCP 仕様に対して誠実な実装にするため
 - 名刺 OCR ユースケースを初回リリースで前面に出せ、Zenn 記事での訴求力が増す
 - Prompt 経由の使用で LLM のトークン消費が削減される (ツール選択ミス減)
 - v0.2.0 で次の目玉 (UI Resources / ext-apps) に集中できる

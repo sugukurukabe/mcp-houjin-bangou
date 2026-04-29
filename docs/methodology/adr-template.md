@@ -187,4 +187,4 @@ Draft | Accepted | Deprecated | Superseded by ADR-XXXX
 - コードレビュワーが「なぜこう実装したか」を追跡可能 → PR レビュー高速化
 - v0.X.0 → v0.Y.0 の breaking 判断の根拠が残る → Interface Freeze 守れる
 - OSS 読者が設計思想を理解可能 → star / contributor 増
-- 上級開発者への転職時 → ポートフォリオとして機能
+- 将来の自分が判断の根拠へ戻れる
