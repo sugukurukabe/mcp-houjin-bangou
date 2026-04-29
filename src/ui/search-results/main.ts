@@ -31,7 +31,7 @@ function render(output: SearchOutput): void {
   const rows = corporations
     .map(
       (c) => `
-        <tr>
+        <tr class="result-row" data-corporate-number="${escapeText(c.corporate_number)}">
           <td><code>${escapeText(c.corporate_number)}</code></td>
           <td>${escapeText(c.name)}</td>
           <td>${escapeText(formatAddress(c))}</td>
@@ -59,9 +59,45 @@ function render(output: SearchOutput): void {
         <tbody>${rows}</tbody>
       </table>
     </div>
+    <p class="hint">行を選択すると法人番号で詳細を再取得します。</p>
     ${output.next_cursor ? `<p class="next">次ページあり: <code>${escapeText(output.next_cursor)}</code></p>` : ''}
     <footer>${renderAttribution(output.attribution)}</footer>
   `;
+
+  for (const row of Array.from(root.querySelectorAll<HTMLTableRowElement>('.result-row'))) {
+    row.addEventListener('click', () => {
+      const corporateNumber = row.dataset['corporateNumber'];
+      if (corporateNumber !== undefined) {
+        void lookupCorporate(corporateNumber);
+      }
+    });
+  }
+}
+
+async function lookupCorporate(corporateNumber: string): Promise<void> {
+  if (root === null) return;
+  root.insertAdjacentHTML(
+    'afterbegin',
+    `<p class="loading">法人番号 ${escapeText(corporateNumber)} の詳細を取得しています...</p>`,
+  );
+  try {
+    const result = await app.callServerTool({
+      name: 'lookup_corporate_by_number',
+      arguments: { corporate_numbers: [corporateNumber] },
+    });
+    if (result.isError) {
+      root.querySelector('.loading')?.remove();
+      root.insertAdjacentHTML('afterbegin', '<p class="empty">詳細取得に失敗しました。</p>');
+      return;
+    }
+    render((result.structuredContent ?? {}) as SearchOutput);
+  } catch (error) {
+    root.querySelector('.loading')?.remove();
+    root.insertAdjacentHTML(
+      'afterbegin',
+      `<p class="empty">${escapeText(error instanceof Error ? error.message : '詳細取得に失敗しました。')}</p>`,
+    );
+  }
 }
 
 app.onhostcontextchanged = (ctx) => {

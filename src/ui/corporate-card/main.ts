@@ -50,8 +50,36 @@ function renderCard(output: LookupOutput): void {
       <dt>最終更新日</dt><dd>${escapeText(corporation.update_date)}</dd>
       <dt>フリガナ</dt><dd>${escapeText(corporation.furigana || '未登録')}</dd>
     </dl>
+    <section class="actions">
+      <button type="button" id="search-similar">類似商号を検索</button>
+    </section>
     <footer>${renderAttribution(output.attribution)}</footer>
   `;
+
+  document.getElementById('search-similar')?.addEventListener('click', () => {
+    void searchSimilar(corporation.name);
+  });
+}
+
+async function searchSimilar(name: string): Promise<void> {
+  renderEmpty('類似商号を検索しています...');
+  try {
+    const result = await app.callServerTool({
+      name: 'search_corporate_by_name',
+      arguments: {
+        name,
+        match_mode: 'partial',
+        search_target: 'fuzzy',
+      },
+    });
+    if (result.isError) {
+      renderEmpty('検索に失敗しました。tool result を確認してください。');
+      return;
+    }
+    renderCard((result.structuredContent ?? {}) as LookupOutput);
+  } catch (error) {
+    renderEmpty(error instanceof Error ? error.message : '検索に失敗しました。');
+  }
 }
 
 app.onhostcontextchanged = (ctx) => {

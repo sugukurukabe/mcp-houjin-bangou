@@ -61,6 +61,21 @@ td {
   font-size: 13px;
 }
 
+tbody tr {
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  background: color-mix(in srgb, CanvasText 6%, transparent);
+}
+
+.hint,
+.loading {
+  color: color-mix(in srgb, CanvasText 65%, transparent);
+  font-size: 12px;
+  margin: 10px 0;
+}
+
 footer {
   margin-top: 12px;
   border-top: 1px solid color-mix(in srgb, CanvasText 14%, transparent);

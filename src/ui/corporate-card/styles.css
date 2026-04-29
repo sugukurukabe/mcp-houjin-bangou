@@ -54,6 +54,27 @@ h1 {
   margin: 16px 0;
 }
 
+.actions {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+
+button {
+  background: CanvasText;
+  border: 0;
+  border-radius: 8px;
+  color: Canvas;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
 dt {
   color: color-mix(in srgb, CanvasText 70%, transparent);
   font-size: 12px;

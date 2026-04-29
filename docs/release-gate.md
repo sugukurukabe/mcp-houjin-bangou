@@ -84,7 +84,7 @@ Release date target: **2026-05-22**
 - [x] `package.json`: provenance friendly (publishConfig, files, bin)
 - [x] `.npmignore` で不要ファイル除外
 - [ ] npm Trusted Publishing (GitHub OIDC) が npmjs.com 側で設定されている
-- [x] `pnpm publish --dry-run --access public` が成功 (217.3 kB / 151 files)
+- [x] `pnpm publish --dry-run --access public` が成功 (218.0 kB / 151 files)
 - [ ] `npm info @sugukuru-labs/mcp-houjin-bangou` で name conflict なし
 
 ## リリースアナウンス / Release announcement
