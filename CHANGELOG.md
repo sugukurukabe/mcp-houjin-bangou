@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - invoice number normalization
   - company name normalization
   - NTA CSV parser
+- v0.2.0 UI Resources preparation
+  - `src/ui/corporate-card/`
+  - `src/ui/search-results/`
+  - Vite single-file build (`pnpm build:ui`)
+  - CSP hash injection (`pnpm build:csp`)
+  - `ui://corporate-card/mcp-app.html` and `ui://search-results/mcp-app.html` registered as resources
 - Release readiness audit fixes
   - Server Card and runtime `initialize` capability alignment (`listChanged=true`)
   - npm Trusted Publishing / GitHub OIDC (removed `NPM_TOKEN` dependency)

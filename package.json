@@ -43,7 +43,12 @@
   },
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "pnpm build:server && pnpm build:ui && pnpm build:csp",
+    "build:server": "tsc -p tsconfig.build.json",
+    "build:ui:card": "UI_ENTRY=corporate-card vite build",
+    "build:ui:results": "UI_ENTRY=search-results vite build",
+    "build:ui": "pnpm build:ui:card && pnpm build:ui:results",
+    "build:csp": "tsx scripts/compute-csp-hashes.ts",
     "dev": "tsx watch src/server.ts",
     "start": "node dist/server.js",
     "test": "vitest run",
@@ -60,8 +65,10 @@
     "smoke": "tsx scripts/mcp-smoke.ts"
   },
   "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.7.1",
     "@modelcontextprotocol/sdk": "^1.18.0",
     "cors": "^2.8.5",
+    "dompurify": "^3.4.1",
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "pino": "^9.5.0",
@@ -81,6 +88,8 @@
     "tinybench": "^6.0.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
+    "vite": "^8.0.10",
+    "vite-plugin-singlefile": "^2.3.3",
     "vitest": "^2.1.8"
   }
 }

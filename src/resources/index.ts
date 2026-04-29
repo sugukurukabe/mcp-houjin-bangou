@@ -3,6 +3,7 @@ import type { NtaClient } from '../api/nta-client.js';
 import type { McpLogger } from '../lib/mcp-logger.js';
 import { registerAttributionResource } from './attribution.js';
 import { registerCorporateResourceTemplate } from './corporate-template.js';
+import { registerUiResources } from './ui-resources.js';
 
 export function registerAllResources(
   server: McpServer,
@@ -10,4 +11,5 @@ export function registerAllResources(
 ): void {
   registerAttributionResource(server);
   registerCorporateResourceTemplate(server, deps);
+  registerUiResources(server);
 }

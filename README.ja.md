@@ -71,6 +71,7 @@ https://www.invoice-kohyo.nta.go.jp/web-api/pre-reg/ から無料で発行され
 - **Tools** × 5
 - **Prompts** × 3 (`business-card-to-database` / `sales-list-enrichment` / `customer-master-dedup`) — 名刺OCRから CRM 登録、営業リスト一括 enrichment、顧客マスタ重複検知の実務ワークフローをテンプレート化
 - **Resources** (`attribution://houjin-bangou`)
+- **UI Resources** (`ui://corporate-card/mcp-app.html`, `ui://search-results/mcp-app.html`) — v0.2.0 の表示層準備
 - **Resource Templates** (`corp://{corporate_number}` — 法人番号を URI として法人情報取得)
 - **Completion** — `株式会社スグク…` まで打った瞬間に T7 normalizer が候補を返す IDE 補完UX、Prompt 引数の enum 補完も対応
 - **Logging** — RFC 5424 severity の構造化ログを `notifications/message` で配信
@@ -159,13 +160,13 @@ pnpm publish --dry-run --no-git-checks --access public
 
 | Check | Result |
 |---|---:|
-| Unit + integration tests | 151 passing |
+| Unit + integration tests | 153 passing |
 | Property-based generated cases | 11,500+ |
 | `computeCheckDigit` | 約 18.8M ops/sec |
 | `isValidCheckDigit` | 約 10.1M ops/sec |
 | `normalizeCompanyName` | 約 344k ops/sec |
 | `parseNtaCsv` | 約 389k ops/sec |
-| npm dry-run tarball | 85.9 kB / 145 files |
+| npm dry-run tarball | 217.2 kB / 151 files |
 
 ## 出典
 

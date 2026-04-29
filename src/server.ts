@@ -188,7 +188,11 @@ function buildServerCard(): object {
       ],
       prompts: ['business-card-to-database', 'sales-list-enrichment', 'customer-master-dedup'],
       resource_templates: ['corp://{corporate_number}'],
-      resources: ['attribution://houjin-bangou'],
+      resources: [
+        'attribution://houjin-bangou',
+        'ui://corporate-card/mcp-app.html',
+        'ui://search-results/mcp-app.html',
+      ],
     },
     attribution: {
       data_source: '国税庁法人番号公表サイト (https://www.houjin-bangou.nta.go.jp/)',

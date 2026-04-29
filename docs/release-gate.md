@@ -4,7 +4,7 @@ Release date target: **2026-05-22**
 
 ## コード品質 / Code quality
 
-- [x] `pnpm test` — 151/151 pass
+- [x] `pnpm test` — 153/153 pass
 - [x] `pnpm typecheck` — clean, 0 errors
 - [x] `pnpm lint` — 0 errors (tests に 1 non-null assertion warning は許容)
 - [x] `pnpm format:check` — all formatted
@@ -84,7 +84,7 @@ Release date target: **2026-05-22**
 - [x] `package.json`: provenance friendly (publishConfig, files, bin)
 - [x] `.npmignore` で不要ファイル除外
 - [ ] npm Trusted Publishing (GitHub OIDC) が npmjs.com 側で設定されている
-- [x] `pnpm publish --dry-run --access public` が成功 (85.9 kB / 145 files)
+- [x] `pnpm publish --dry-run --access public` が成功 (217.2 kB / 151 files)
 - [ ] `npm info @sugukuru-labs/mcp-houjin-bangou` で name conflict なし
 
 ## リリースアナウンス / Release announcement

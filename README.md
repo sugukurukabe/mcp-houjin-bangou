@@ -71,6 +71,7 @@ Most MCP servers ship with just Tools. This one activates:
 - **Tools** × 5 (above)
 - **Prompts** × 3 (`business-card-to-database`, `sales-list-enrichment`, `customer-master-dedup`) — pre-built workflow templates for real-world B2B use cases
 - **Resources** (`attribution://houjin-bangou`)
+- **UI Resources** (`ui://corporate-card/mcp-app.html`, `ui://search-results/mcp-app.html`) — v0.2.0 display layer preparation
 - **Resource Templates** (`corp://{corporate_number}` — fetch a corporation as a resource)
 - **Completion** — type `株式会社スグク…` and get suggestions from T7 normalizer in real-time; prompt argument enum completion also supported
 - **Logging** — structured RFC 5424 severity logs via `notifications/message`
@@ -161,13 +162,13 @@ Current local verification snapshot:
 
 | Check | Result |
 |---|---:|
-| Unit + integration tests | 151 passing |
+| Unit + integration tests | 153 passing |
 | Property-based generated cases | 11,500+ |
 | `computeCheckDigit` | ~18.8M ops/sec |
 | `isValidCheckDigit` | ~10.1M ops/sec |
 | `normalizeCompanyName` | ~344k ops/sec |
 | `parseNtaCsv` | ~389k ops/sec |
-| npm dry-run tarball | 85.9 kB / 145 files |
+| npm dry-run tarball | 217.2 kB / 151 files |
 
 ## Attribution
 

@@ -257,6 +257,8 @@ describe('MCP Resources integration', () => {
     const result = await client.listResources();
     const names = result.resources.map((r) => r.uri);
     expect(names).toContain('attribution://houjin-bangou');
+    expect(names).toContain('ui://corporate-card/mcp-app.html');
+    expect(names).toContain('ui://search-results/mcp-app.html');
   });
 
   it('resources/templates/list returns corp template', async () => {
@@ -276,6 +278,28 @@ describe('MCP Resources integration', () => {
     }
     const parsed = JSON.parse(first.text) as { service_disclaimer: string };
     expect(parsed.service_disclaimer).toContain('国税庁法人番号システム');
+  });
+
+  it('resources/read ui://corporate-card/mcp-app.html returns MCP App HTML', async () => {
+    const client = await setupClient();
+    const result = await client.readResource({ uri: 'ui://corporate-card/mcp-app.html' });
+    const first = result.contents[0];
+    if (first === undefined || !('text' in first) || typeof first.text !== 'string') {
+      throw new Error('Expected text resource');
+    }
+    expect(first.mimeType).toContain('text/html');
+    expect(first.text).toContain('Corporate Card');
+  });
+
+  it('resources/read ui://search-results/mcp-app.html returns MCP App HTML', async () => {
+    const client = await setupClient();
+    const result = await client.readResource({ uri: 'ui://search-results/mcp-app.html' });
+    const first = result.contents[0];
+    if (first === undefined || !('text' in first) || typeof first.text !== 'string') {
+      throw new Error('Expected text resource');
+    }
+    expect(first.mimeType).toContain('text/html');
+    expect(first.text).toContain('Search Results');
   });
 
   it('resources/read corp://{number} with valid number returns corporation', async () => {
