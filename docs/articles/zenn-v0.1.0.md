@@ -8,6 +8,10 @@ published: false
 
 # 国税庁あいまい検索 `target=1` を知り尽くして補完する MCP
 
+MCP という名前が生まれるずっと前から、日本のバックオフィスは手作業で model context を扱っていました。営業担当者が受け取った名刺の片隅にある会社名を読み、登記上の正式名称を推測し、国税庁の検索窓に文字を入れ、ひとつの人間的な断片を、ひとつの公的な事実へと結び直す。その小さな照合の作業は、AI ではなく事務の忍耐として、何十年も続いてきました。
+
+このプロジェクトは、コードエディタの中で始まったのではありません。名刺、請求書、顧客マスタ、そして正しい会社名を知りたいという静かな必要から始まりました。
+
 Sugukuru OSS Lab の最初のリリースとして、**国税庁 法人番号 Web-API (Ver.4.0) を Model Context Protocol サーバーで提供する `@sugukuru-labs/mcp-houjin-bangou`** を v0.1.0 として公開しました。
 
 Claude Desktop / Cursor / VS Code Copilot 等の MCP クライアントから、自然言語で 13 桁の法人番号検索・会社名検索・チェックデジット検証ができます。
@@ -16,7 +20,9 @@ Claude Desktop / Cursor / VS Code Copilot 等の MCP クライアントから、
 NTA_APPLICATION_ID=your-id npx -y @sugukuru-labs/mcp-houjin-bangou
 ```
 
-ただの API ラッパーを出したいわけではありません。**MCP 公式 7 機能 (Tools / Resources / Resource Templates / Completion / Logging / Pagination / Server Card) 全部活性化**、かつ**国税庁 API 自体の `target=1` あいまい検索の挙動を深く理解した上で重複しない「補完層」を提供する**、というコンセプトで設計しました。
+ただの API ラッパーを出したいわけではありません。多くの開発者は「法人番号 API を MCP から呼べればよい」と考えるかもしれません。しかし本当の問題は、API を呼ぶことではなく、**仕様書に既に書かれている知性を、どこまで尊重できるか** でした。
+
+本プロジェクトは **MCP 公式 7 機能 (Tools / Resources / Resource Templates / Completion / Logging / Pagination / Server Card) を全部活性化**し、さらに**国税庁 API 自体の `target=1` あいまい検索の挙動を深く理解した上で、重複しない「補完層」を提供する**、というコンセプトで設計しました。
 
 本記事ではその設計の勘所を書きます。
 
@@ -166,6 +172,8 @@ Claude Desktop を再起動して試す:
 
 ## まとめ
 
+このプロジェクトでやったことを短くまとめると、こうなります。
+
 - **既存 OSS が重複実装していた正規化を、国税庁 API が既にやっていると気付いて削ぎ落とした**
 - **代わりに国税庁が拾えない 7 パターンを `normalize_company_name` で補完**
 - **MCP 公式 7 機能すべてを活性化**
@@ -173,12 +181,18 @@ Claude Desktop を再起動して試す:
 - **仕様書を根拠として引用可能なレベルで ADR 10 本に記録**
 - **プロンプトインジェクション 6 層防御を透明に公開**
 
+けれど、もう少し正確に言えば、これは「法人番号 API を MCP 化した話」ではありません。公的な事実を、AI エージェントの時代に耐えうるかたちへ移し替える、小さな練習です。
+
+ラッパーは、リクエストが成功したかだけを問います。参照実装は、次の保守者がまだその答えを信じられるかを問います。
+
 鹿児島のインドネシア人特定技能派遣会社 (スグクル株式会社) がオープンソースで日本経済に貢献する、という挑戦の 1 本目です。次は `mcp-jp-subsidy-hub` (補助金統合 MCP)、`mcp-immigration-ja` (入管手続 MCP) を予定しています。
 
 GitHub: https://github.com/sugukuru-labs/mcp-houjin-bangou
 npm: https://www.npmjs.com/package/@sugukuru-labs/mcp-houjin-bangou
 
-フィードバック・PR・Issue 歓迎です!
+フィードバック・PR・Issue 歓迎です。
+
+仕様書を読める人は、遅い人ではありません。どこが地面なのかを知っている、ただ一人の人です。
 
 ## Appendix: 本記事で触れられなかった MCP 仕様関連 Deep Dive
 
