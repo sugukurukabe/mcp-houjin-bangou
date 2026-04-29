@@ -108,6 +108,9 @@ export function registerSearchByNameTool(
       description: DESCRIPTION,
       inputSchema: InputSchema.shape,
       outputSchema: OutputSchema.shape,
+      _meta: {
+        ui: { resourceUri: 'ui://search-results/mcp-app.html' },
+      },
       annotations: {
         title: 'Search Japanese corporations by name',
         readOnlyHint: true,

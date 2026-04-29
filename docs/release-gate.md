@@ -4,7 +4,7 @@ Release date target: **2026-05-22**
 
 ## コード品質 / Code quality
 
-- [x] `pnpm test` — 153/153 pass
+- [x] `pnpm test` — 154/154 pass
 - [x] `pnpm typecheck` — clean, 0 errors
 - [x] `pnpm lint` — 0 errors (tests に 1 non-null assertion warning は許容)
 - [x] `pnpm format:check` — all formatted
@@ -34,7 +34,7 @@ Release date target: **2026-05-22**
 ## Server Card / 発見可能性
 
 - [x] `/.well-known/mcp.json` が公開されている
-- [x] Server Card JSON に 5 tools + 2 resources が列挙されている
+- [x] Server Card JSON に 5 tools + 3 resources が列挙されている
 - [x] `attribution` / `safety` / `specs_referenced` メタデータ完備
 
 ## セキュリティ / Security
@@ -84,7 +84,7 @@ Release date target: **2026-05-22**
 - [x] `package.json`: provenance friendly (publishConfig, files, bin)
 - [x] `.npmignore` で不要ファイル除外
 - [ ] npm Trusted Publishing (GitHub OIDC) が npmjs.com 側で設定されている
-- [x] `pnpm publish --dry-run --access public` が成功 (217.2 kB / 151 files)
+- [x] `pnpm publish --dry-run --access public` が成功 (217.3 kB / 151 files)
 - [ ] `npm info @sugukuru-labs/mcp-houjin-bangou` で name conflict なし
 
 ## リリースアナウンス / Release announcement

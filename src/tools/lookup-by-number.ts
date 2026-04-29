@@ -80,6 +80,9 @@ export function registerLookupByNumberTool(
       description: DESCRIPTION,
       inputSchema: InputSchema.shape,
       outputSchema: OutputSchema.shape,
+      _meta: {
+        ui: { resourceUri: 'ui://corporate-card/mcp-app.html' },
+      },
       annotations: {
         title: 'Lookup Japanese corporation by national corporate number',
         readOnlyHint: true,

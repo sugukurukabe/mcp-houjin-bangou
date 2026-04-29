@@ -162,13 +162,13 @@ Current local verification snapshot:
 
 | Check | Result |
 |---|---:|
-| Unit + integration tests | 153 passing |
+| Unit + integration tests | 154 passing |
 | Property-based generated cases | 11,500+ |
 | `computeCheckDigit` | ~18.8M ops/sec |
 | `isValidCheckDigit` | ~10.1M ops/sec |
 | `normalizeCompanyName` | ~344k ops/sec |
 | `parseNtaCsv` | ~389k ops/sec |
-| npm dry-run tarball | 217.2 kB / 151 files |
+| npm dry-run tarball | 217.3 kB / 151 files |
 
 ## Attribution
 

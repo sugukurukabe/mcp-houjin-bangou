@@ -104,9 +104,21 @@ async function main(): Promise<void> {
   // 4. tools/list
   try {
     const res = await rpc('tools/list');
-    const r = res.result as { tools: Array<{ name: string }> };
+    const r = res.result as { tools: Array<{ name: string; _meta?: Record<string, unknown> }> };
     const names = r.tools.map((t) => t.name).join(', ');
     ok('tools/list', `${r.tools.length} tools: ${names}`);
+
+    const lookup = r.tools.find((t) => t.name === 'lookup_corporate_by_number');
+    const search = r.tools.find((t) => t.name === 'search_corporate_by_name');
+    const lookupUi = (lookup?._meta?.['ui'] as { resourceUri?: string } | undefined)?.resourceUri;
+    const searchUi = (search?._meta?.['ui'] as { resourceUri?: string } | undefined)?.resourceUri;
+    if (lookupUi !== 'ui://corporate-card/mcp-app.html') {
+      throw new Error(`lookup UI metadata mismatch: ${lookupUi ?? 'missing'}`);
+    }
+    if (searchUi !== 'ui://search-results/mcp-app.html') {
+      throw new Error(`search UI metadata mismatch: ${searchUi ?? 'missing'}`);
+    }
+    ok('tools/list UI metadata', `${lookupUi} / ${searchUi}`);
   } catch (e) {
     bad('tools/list', e instanceof Error ? e.message : String(e));
   }

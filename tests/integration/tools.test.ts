@@ -131,6 +131,19 @@ describe('MCP Tools integration (via in-memory transport)', () => {
     }
   });
 
+  it('lookup/search tools expose UI resource metadata', async () => {
+    const client = await setupClient();
+    const result = await client.listTools();
+    const lookup = result.tools.find((t) => t.name === 'lookup_corporate_by_number');
+    const search = result.tools.find((t) => t.name === 'search_corporate_by_name');
+    expect((lookup?._meta?.['ui'] as { resourceUri?: string } | undefined)?.resourceUri).toBe(
+      'ui://corporate-card/mcp-app.html',
+    );
+    expect((search?._meta?.['ui'] as { resourceUri?: string } | undefined)?.resourceUri).toBe(
+      'ui://search-results/mcp-app.html',
+    );
+  });
+
   it('lookup_corporate_by_number returns corporation', async () => {
     const client = await setupClient();
     const result = await client.callTool({

@@ -24,7 +24,12 @@ v0.2.0 では MCP Apps / UI Resources による `corporate-card` と `search-res
 - `ui://corporate-card/mcp-app.html`
 - `ui://search-results/mcp-app.html`
 
-ただし v0.1.1 では `lookup_corporate_by_number` / `search_corporate_by_name` の `_meta.ui.resourceUri` 接続は行わない。tool 実行結果の表示 UI として安全に読める状態までを下準備とする。
+当初は v0.1.1 では `_meta.ui.resourceUri` 接続を行わない予定だったが、UI Resource の build / CSP / resources/read が安定したため、v0.2.0-prep として `lookup_corporate_by_number` / `search_corporate_by_name` に `_meta.ui.resourceUri` を接続する。
+
+接続:
+
+- `lookup_corporate_by_number` → `ui://corporate-card/mcp-app.html`
+- `search_corporate_by_name` → `ui://search-results/mcp-app.html`
 
 ## Consequences
 

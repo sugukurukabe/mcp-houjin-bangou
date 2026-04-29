@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Vite single-file build (`pnpm build:ui`)
   - CSP hash injection (`pnpm build:csp`)
   - `ui://corporate-card/mcp-app.html` and `ui://search-results/mcp-app.html` registered as resources
+  - `lookup_corporate_by_number` and `search_corporate_by_name` expose `_meta.ui.resourceUri`
 - Release readiness audit fixes
   - Server Card and runtime `initialize` capability alignment (`listChanged=true`)
   - npm Trusted Publishing / GitHub OIDC (removed `NPM_TOKEN` dependency)

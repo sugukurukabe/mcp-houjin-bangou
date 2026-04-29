@@ -160,13 +160,13 @@ pnpm publish --dry-run --no-git-checks --access public
 
 | Check | Result |
 |---|---:|
-| Unit + integration tests | 153 passing |
+| Unit + integration tests | 154 passing |
 | Property-based generated cases | 11,500+ |
 | `computeCheckDigit` | 約 18.8M ops/sec |
 | `isValidCheckDigit` | 約 10.1M ops/sec |
 | `normalizeCompanyName` | 約 344k ops/sec |
 | `parseNtaCsv` | 約 389k ops/sec |
-| npm dry-run tarball | 217.2 kB / 151 files |
+| npm dry-run tarball | 217.3 kB / 151 files |
 
 ## 出典
 
