@@ -81,7 +81,7 @@ Release date target: **2026-05-22**
 - [x] `package.json`: scoped public `@sugukuru-labs/mcp-houjin-bangou`
 - [x] `package.json`: provenance friendly (publishConfig, files, bin)
 - [x] `.npmignore` で不要ファイル除外
-- [ ] NPM_TOKEN が GitHub Secret に登録されている
+- [ ] npm Trusted Publishing (GitHub OIDC) が npmjs.com 側で設定されている
 - [ ] `pnpm publish --dry-run --access public` が成功
 - [ ] `npm info @sugukuru-labs/mcp-houjin-bangou` で name conflict なし
 

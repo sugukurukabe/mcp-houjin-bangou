@@ -14,9 +14,9 @@
     "note": "Anonymous read-only access. v0.5.0 Hosted edition will add OAuth Client Credentials (RFC 7523 JWT Bearer) and Enterprise-Managed Authorization (ID-JAG, SEP-990)."
   },
   "capabilities": {
-    "tools": { "listChanged": false },
-    "resources": { "listChanged": false, "subscribe": false },
-    "prompts": { "listChanged": false },
+    "tools": { "listChanged": true },
+    "resources": { "listChanged": true, "subscribe": false },
+    "prompts": { "listChanged": true },
     "completions": {},
     "logging": {}
   },

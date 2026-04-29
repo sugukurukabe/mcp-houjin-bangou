@@ -19,9 +19,9 @@ export function createServer(deps: { ntaClient: NtaClient }): McpServer {
     },
     {
       capabilities: {
-        tools: { listChanged: false },
-        resources: { listChanged: false, subscribe: false },
-        prompts: { listChanged: false },
+        tools: { listChanged: true },
+        resources: { listChanged: true, subscribe: false },
+        prompts: { listChanged: true },
         completions: {},
         logging: {},
       },

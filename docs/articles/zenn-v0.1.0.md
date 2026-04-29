@@ -88,8 +88,9 @@ MCP 公式仕様には Tools だけでなく、Prompts、Resources、Resource Te
 ```typescript
 new McpServer({ name, version }, {
   capabilities: {
-    tools: { listChanged: false },
-    resources: { listChanged: false, subscribe: false },
+    tools: { listChanged: true },
+    resources: { listChanged: true, subscribe: false },
+    prompts: { listChanged: true },
     completions: {},
     logging: {}
   }
@@ -109,7 +110,7 @@ new McpServer({ name, version }, {
 2025 年 4 月に Simon Willison が [MCP has prompt injection security problems](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/) を公開し、Rug Pull / Tool Shadowing / Tool Poisoning 等の攻撃面が話題になりました。本 MCP は 6 層の防御を組み込みました:
 
 1. **Tool description は静的定数** — ランタイム書換禁止、CI で `<IMPORTANT>` 等 grep 検知
-2. **`listChanged: false`** — 運用中の tool リスト変更なし
+2. **静的 tool description** — SDK v1 は `listChanged: true` を返すが、運用中に tool 定義を書き換えない
 3. **Zod strict schema** (`additionalProperties: false`) — sidenote 型フリースロット不可
 4. **Application ID は env のみ** — tool 引数経由で受け取らない
 5. **全 tool output に `attribution` 必須化** — LLM が出典を user に伝えられる

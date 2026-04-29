@@ -188,7 +188,7 @@ Claude Desktop / Cursor / VS Code Copilot 等の MCP クライアントから自
 6 層防御を `docs/security/prompt-injection-defense.md` で公開:
 
 1. 静的 tool description (CI grep 検査)
-2. listChanged: false (運用中変更不可)
+2. 静的 tool / prompt / resource 定義 (運用中変更不可。SDK v1 の capability は `listChanged: true`)
 3. Zod strict schema (additionalProperties: false)
 4. 環境変数経由のみの ID 管理 (tool 引数禁止)
 5. ログの自動 redact

@@ -172,9 +172,9 @@ function buildServerCard(): object {
       note: 'Anonymous read-only access. v0.5.0 Hosted edition will add OAuth Client Credentials and Enterprise-Managed Authorization (ID-JAG).',
     },
     capabilities: {
-      tools: { listChanged: false },
-      resources: { listChanged: false, subscribe: false },
-      prompts: { listChanged: false },
+      tools: { listChanged: true },
+      resources: { listChanged: true, subscribe: false },
+      prompts: { listChanged: true },
       completions: {},
       logging: {},
     },

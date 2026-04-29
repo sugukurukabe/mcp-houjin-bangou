@@ -7,10 +7,10 @@
 
 | # | Primitive | 必須 capability 宣言 | 用途 |
 |---|---|---|---|
-| 1 | Tools | `tools: { listChanged: false }` | 実行系の機能 |
-| 2 | Prompts | `prompts: { listChanged: false }` | ワークフローテンプレート |
+| 1 | Tools | `tools: { listChanged: true }` | 実行系の機能 |
+| 2 | Prompts | `prompts: { listChanged: true }` | ワークフローテンプレート |
 | 3 | Resources | （resources capability に含む） | 静的なドキュメント・出典 |
-| 4 | Resource Templates | `resources: { listChanged: false, subscribe: false }` | URI 引数で参照可能なデータ |
+| 4 | Resource Templates | `resources: { listChanged: true, subscribe: false }` | URI 引数で参照可能なデータ |
 | 5 | Completion | `completions: {}` | 引数の auto-complete 候補 |
 | 6 | Logging | `logging: {}` | 構造化ログを client に送信 |
 | 7 | Pagination | （capability 不要、cursor 実装のみ） | list / search の段階的取得 |
@@ -26,9 +26,9 @@ export function createServer(deps: { ... }): McpServer {
     version: VERSION,
   }, {
     capabilities: {
-      tools:       { listChanged: false },
-      prompts:     { listChanged: false },
-      resources:   { listChanged: false, subscribe: false },
+      tools:       { listChanged: true },
+      prompts:     { listChanged: true },
+      resources:   { listChanged: true, subscribe: false },
       completions: {},
       logging:     {},
     },
@@ -437,9 +437,9 @@ return {
   },
   "authentication": { "required": false },
   "capabilities": {
-    "tools":       { "listChanged": false },
-    "prompts":     { "listChanged": false },
-    "resources":   { "listChanged": false, "subscribe": false },
+    "tools":       { "listChanged": true },
+    "prompts":     { "listChanged": true },
+    "resources":   { "listChanged": true, "subscribe": false },
     "completions": {},
     "logging":     {}
   },

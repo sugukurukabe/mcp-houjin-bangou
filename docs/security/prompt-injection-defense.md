@@ -24,7 +24,7 @@ Dokumen ini menjelaskan pertahanan prompt injection di `@sugukuru-labs/mcp-houji
 
 - **Tool description は `src/tools/*.ts` 内の静的定数 (`DESCRIPTION`)** で定義。ランタイム書換禁止
 - **`eslint.config.js` で `no-new-func`, `no-eval`, `no-implied-eval` を error** に設定
-- **`notifications/tools/list_changed` を capability 宣言で `listChanged: false`** とし、サーバー側からの tool リスト変更を通知しない
+- **静的 tool description + no runtime mutation**。SDK v1 は `initialize` で `listChanged: true` を返すが、本サーバーは起動後に tool / prompt / resource 定義を変更しない
 - v0.5.0 Hosted では **`/.well-known/mcp.json` に tool schema の SHA-256 hash を公開**、クライアントが改ざんを検知可能
 - **Server Card のバージョニング** で `version: "0.1.0"` を公開し、不意のバージョン変更を発見可能
 
