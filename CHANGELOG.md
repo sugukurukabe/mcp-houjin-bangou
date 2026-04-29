@@ -8,6 +8,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added (v0.1.1 quality hardening)
+
+- `fast-check` property-based tests
+  - `tests/unit/check-digit.property.test.ts`: 5 properties, 4000 generated cases
+  - `tests/unit/invoice-number.property.test.ts`: 4 properties, 2500 generated cases
+  - `tests/unit/normalizer.property.test.ts`: 5 properties, 5000 generated cases
+- `tinybench` benchmark suite (`pnpm bench`)
+  - check digit validation
+  - invoice number normalization
+  - company name normalization
+  - NTA CSV parser
+- Release readiness audit fixes
+  - Server Card and runtime `initialize` capability alignment (`listChanged=true`)
+  - npm Trusted Publishing / GitHub OIDC (removed `NPM_TOKEN` dependency)
+  - CycloneDX SBOM workflow
+
 ### Added (v0.3.0 準備層)
 
 - `src/domain/invoice-number.ts`: T番号 (T+13桁) Branded type + 正規化検証 (全角/半角/ハイフン/小文字T 対応)

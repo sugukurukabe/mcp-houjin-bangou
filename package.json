@@ -54,15 +54,16 @@
     "lint:fix": "eslint src tests --fix",
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "bench": "tsx benchmarks/run.ts",
     "prepublishOnly": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run build",
     "health-check": "tsx scripts/api-id-keepalive.ts",
     "smoke": "tsx scripts/mcp-smoke.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.18.0",
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "helmet": "^8.0.0",
-    "cors": "^2.8.5",
     "pino": "^9.5.0",
     "pino-http": "^10.3.0",
     "zod": "^3.23.8"
@@ -75,7 +76,9 @@
     "@typescript-eslint/parser": "^8.18.1",
     "@vitest/coverage-v8": "^2.1.8",
     "eslint": "^9.17.0",
+    "fast-check": "^4.7.0",
     "prettier": "^3.4.2",
+    "tinybench": "^6.0.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"

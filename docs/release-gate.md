@@ -4,12 +4,14 @@ Release date target: **2026-05-22**
 
 ## コード品質 / Code quality
 
-- [x] `pnpm test` — 85/85 pass
+- [x] `pnpm test` — 151/151 pass
 - [x] `pnpm typecheck` — clean, 0 errors
 - [x] `pnpm lint` — 0 errors (tests に 1 non-null assertion warning は許容)
 - [x] `pnpm format:check` — all formatted
 - [x] `pnpm build` — dist/ 生成、server.js 実行可能
 - [ ] `pnpm test:coverage` で 80% 以上
+- [x] `fast-check` property-based tests (11,500+ generated cases)
+- [x] `pnpm bench` benchmark suite
 
 ## MCP プロトコル準拠 / MCP protocol compliance
 
@@ -82,14 +84,14 @@ Release date target: **2026-05-22**
 - [x] `package.json`: provenance friendly (publishConfig, files, bin)
 - [x] `.npmignore` で不要ファイル除外
 - [ ] npm Trusted Publishing (GitHub OIDC) が npmjs.com 側で設定されている
-- [ ] `pnpm publish --dry-run --access public` が成功
+- [x] `pnpm publish --dry-run --access public` が成功 (85.9 kB / 145 files)
 - [ ] `npm info @sugukuru-labs/mcp-houjin-bangou` で name conflict なし
 
 ## リリースアナウンス / Release announcement
 
 - [ ] Zenn 記事ドラフト完成 (`docs/articles/zenn-v0.1.0.md`)
 - [ ] Zenn 記事公開
-- [ ] X (旧 Twitter) 投稿スレッド準備
+- [x] X / HN / 指名レビューは非露出方針で deprecated 化
 - [ ] v0.2.0 実装ブランチの準備
 - [ ] Sugukuru コーポレートサイトの「OSS」ページ更新
 - [ ] Slack (#30-dev) に共有
@@ -108,7 +110,7 @@ Release date target: **2026-05-22**
 2. `git push origin main --tags`
 3. GitHub Actions が自動で npm publish + GitHub Release 作成
 4. npm レジストリで公開を確認 (`pnpm info @sugukuru-labs/mcp-houjin-bangou`)
-5. Zenn 記事公開 + X スレッド投稿
+5. Zenn 記事公開後、すぐ v0.2.0 実装に戻る
 
 ---
 

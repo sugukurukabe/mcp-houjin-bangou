@@ -144,6 +144,29 @@ https://www.invoice-kohyo.nta.go.jp/web-api/pre-reg/ から無料で発行され
 - [コントリビュートガイド](CONTRIBUTING.md)
 - [行動規範](CODE_OF_CONDUCT.md)
 
+## 検証
+
+本プロジェクトでは、テストとベンチマークも公開インターフェースの一部として扱います。
+
+```bash
+pnpm typecheck
+pnpm test
+pnpm bench
+pnpm publish --dry-run --no-git-checks --access public
+```
+
+現在のローカル検証スナップショット:
+
+| Check | Result |
+|---|---:|
+| Unit + integration tests | 151 passing |
+| Property-based generated cases | 11,500+ |
+| `computeCheckDigit` | 約 18.8M ops/sec |
+| `isValidCheckDigit` | 約 10.1M ops/sec |
+| `normalizeCompanyName` | 約 344k ops/sec |
+| `parseNtaCsv` | 約 389k ops/sec |
+| npm dry-run tarball | 85.9 kB / 145 files |
+
 ## 出典
 
 本プロジェクトは **国税庁法人番号システム Web-API 機能** を利用しています。

@@ -146,6 +146,29 @@ Enterprise integration (Document AI + secure DB write) is out of scope for the O
 - [CONTRIBUTING](CONTRIBUTING.md)
 - [CODE OF CONDUCT](CODE_OF_CONDUCT.md)
 
+## Verification
+
+This project treats tests and benchmarks as part of the public interface.
+
+```bash
+pnpm typecheck
+pnpm test
+pnpm bench
+pnpm publish --dry-run --no-git-checks --access public
+```
+
+Current local verification snapshot:
+
+| Check | Result |
+|---|---:|
+| Unit + integration tests | 151 passing |
+| Property-based generated cases | 11,500+ |
+| `computeCheckDigit` | ~18.8M ops/sec |
+| `isValidCheckDigit` | ~10.1M ops/sec |
+| `normalizeCompanyName` | ~344k ops/sec |
+| `parseNtaCsv` | ~389k ops/sec |
+| npm dry-run tarball | 85.9 kB / 145 files |
+
 ## Attribution
 
 This project uses the **National Corporate Number System Web-API** provided by the National Tax Agency of Japan.
