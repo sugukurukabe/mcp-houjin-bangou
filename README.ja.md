@@ -18,7 +18,7 @@ Claude Desktop / Cursor / VS Code Copilot 等の MCP ホストから、以下が
 4. **チェックデジット検証** — ローカル計算、API 呼出なし
 5. **出典文取得** — 国税庁 Web-API 利用規約別添1 第6条 + 公共データ利用規約 第1.0版 準拠
 
-5 つの Tool すべてが **Resources / Resource Templates / Completion / Logging / Pagination / Server Card** と統合されています。国税庁 法人番号 API を扱う OSS で、MCP 公式 7 機能すべてを活性化しているのは本プロジェクトが唯一です。
+5 つの Tool すべてが **Resources / Resource Templates / Completion / Logging / Pagination / Server Card** と統合されています。薄い API ラッパーではなく、MCP 公式 primitive に沿った実装として組んでいます。
 
 ## クイックスタート
 
@@ -62,11 +62,11 @@ https://www.invoice-kohyo.nta.go.jp/web-api/pre-reg/ から無料で発行され
 | `normalize_company_name` | 表記揺れ正規化 | — | 国税庁 `target=1` が拾えない 7 パターン補完 |
 | `get_attribution` | 出典文取得 | — | 利用規約 別添1 第6条 + 公共データ利用規約 第1.0版 |
 
-## なぜ「お手本」なのか
+## 設計姿勢
 
 ### MCP 公式 7 機能すべてを活性化
 
-大半の MCP サーバーは Tools だけを公開しますが、本プロジェクトは公式 7 機能を全部使います:
+本プロジェクトは MCP 公式 7 機能を使います:
 
 - **Tools** × 5
 - **Prompts** × 3 (`business-card-to-database` / `sales-list-enrichment` / `customer-master-dedup`) — 名刺OCRから CRM 登録、営業リスト一括 enrichment、顧客マスタ重複検知の実務ワークフローをテンプレート化
@@ -80,7 +80,7 @@ https://www.invoice-kohyo.nta.go.jp/web-api/pre-reg/ から無料で発行され
 
 ### 国税庁 `target=1` あいまい検索を尊重
 
-他の OSS が自前でやろうとしている以下の揺れは、**国税庁 API が既に内蔵**している (第二編 §4.6.2):
+以下の揺れは、**国税庁 API が既に内蔵**している (第二編 §4.6.2):
 
 - ひらがな → カタカナ
 - 英小文字 → 英大文字

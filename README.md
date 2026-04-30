@@ -20,7 +20,7 @@ An MCP server that lets Claude Desktop, Cursor, VS Code Copilot, and any MCP-com
 4. **Validate** check digits locally without consuming API quota
 5. **Attribute** — returns the mandatory citation text per NTA ToS Article 6
 
-All 5 tools come with **MCP Resources**, **Resource Templates** (`corp://{corporate_number}`), **Completion**, **Logging**, **Pagination**, and a **Server Card** at `/.well-known/mcp.json`. This is the only MCP server we know of that activates **all 7 official primitives** around the houjin-bangou API.
+All 5 tools come with **MCP Resources**, **Resource Templates** (`corp://{corporate_number}`), **Completion**, **Logging**, **Pagination**, and a **Server Card** at `/.well-known/mcp.json`. The implementation follows the official MCP primitives rather than treating this as a thin API wrapper.
 
 ## Quick start
 
@@ -62,11 +62,11 @@ See [`examples/`](examples/) for host-specific configs.
 | `normalize_company_name` | Fuzzy name normalization | — | 7 patterns beyond NTA's `target=1` built-in fuzzy |
 | `get_attribution` | Required citation text | — | Per NTA ToS Article 6 + 公共データ利用規約 v1.0 |
 
-## Why this is a "role-model" MCP server
+## Design stance
 
 ### 1. All 7 MCP primitives activated (not just Tools)
 
-Most MCP servers ship with just Tools. This one activates:
+The server activates:
 
 - **Tools** × 5 (above)
 - **Prompts** × 3 (`business-card-to-database`, `sales-list-enrichment`, `customer-master-dedup`) — pre-built workflow templates for real-world B2B use cases
@@ -80,7 +80,7 @@ Most MCP servers ship with just Tools. This one activates:
 
 ### 2. NTA fuzzy search awareness
 
-Most "corporate number lookup" libraries reimplement normalization from scratch. We **read the NTA spec §4.6.2** and found that `target=1` already handles:
+We **read the NTA spec §4.6.2** and found that `target=1` already handles:
 
 - hiragana ↔ katakana
 - upper / lower case
