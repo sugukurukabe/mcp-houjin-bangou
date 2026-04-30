@@ -46,6 +46,28 @@ export function formatAddress(c: Corporation): string {
   return `${c.prefecture_name}${c.city_name}${c.street_number}`;
 }
 
+export function kindLabel(code: string): string {
+  const labels: Record<string, string> = {
+    '101': '国の機関',
+    '201': '地方公共団体',
+    '301': '株式会社',
+    '302': '有限会社',
+    '303': '合名会社',
+    '304': '合資会社',
+    '305': '合同会社',
+    '399': 'その他の設立登記法人',
+    '401': '外国会社等',
+    '499': 'その他',
+  };
+  return labels[code] ?? code;
+}
+
+export function statusLabel(c: Corporation): { label: string; className: string } {
+  if (c.close_date !== '') return { label: 'Closed', className: 'closed' };
+  if (c.hihyoji === '1') return { label: 'Excluded', className: 'excluded' };
+  return { label: 'Active', className: 'active' };
+}
+
 export function renderAttribution(attribution: Attribution | undefined): string {
   if (attribution === undefined) {
     return '<p class="attribution">出典: 国税庁法人番号公表サイト</p>';

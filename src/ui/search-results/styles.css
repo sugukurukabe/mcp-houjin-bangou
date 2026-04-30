@@ -31,6 +31,12 @@ h1 {
   font-size: 12px;
 }
 
+.empty {
+  border: 1px dashed color-mix(in srgb, CanvasText 24%, transparent);
+  border-radius: 12px;
+  padding: 24px;
+}
+
 .table-wrap {
   border: 1px solid color-mix(in srgb, CanvasText 18%, transparent);
   border-radius: 12px;
@@ -67,6 +73,25 @@ tbody tr {
 
 tbody tr:hover {
   background: color-mix(in srgb, CanvasText 6%, transparent);
+}
+
+.status {
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 11px;
+  padding: 3px 8px;
+}
+
+.status.active {
+  color: #147d3f;
+}
+
+.status.excluded {
+  color: #9a6a00;
+}
+
+.status.closed {
+  color: #a12b2b;
 }
 
 .hint,

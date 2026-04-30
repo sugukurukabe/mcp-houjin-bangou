@@ -3,6 +3,7 @@ import {
   escapeText,
   formatAddress,
   renderAttribution,
+  statusLabel,
   type Attribution,
   type Corporation,
 } from '../shared';
@@ -30,14 +31,17 @@ function render(output: SearchOutput): void {
 
   const rows = corporations
     .map(
-      (c) => `
+      (c) => {
+        const status = statusLabel(c);
+        return `
         <tr class="result-row" data-corporate-number="${escapeText(c.corporate_number)}">
           <td><code>${escapeText(c.corporate_number)}</code></td>
           <td>${escapeText(c.name)}</td>
           <td>${escapeText(formatAddress(c))}</td>
-          <td>${escapeText(c.close_date !== '' ? 'Closed' : c.hihyoji === '1' ? 'Excluded' : 'Active')}</td>
+          <td><span class="status ${escapeText(status.className)}">${escapeText(status.label)}</span></td>
         </tr>
-      `,
+      `;
+      },
     )
     .join('');
 

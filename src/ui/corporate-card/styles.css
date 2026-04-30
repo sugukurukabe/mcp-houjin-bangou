@@ -17,6 +17,13 @@ body {
   max-width: 720px;
 }
 
+.empty-state {
+  border: 1px dashed color-mix(in srgb, CanvasText 24%, transparent);
+  border-radius: 12px;
+  color: color-mix(in srgb, CanvasText 70%, transparent);
+  padding: 24px;
+}
+
 .header {
   align-items: start;
   display: flex;
@@ -47,6 +54,18 @@ h1 {
   padding: 4px 10px;
 }
 
+.status.active {
+  color: #147d3f;
+}
+
+.status.excluded {
+  color: #9a6a00;
+}
+
+.status.closed {
+  color: #a12b2b;
+}
+
 .facts {
   display: grid;
   grid-template-columns: 140px 1fr;
@@ -71,6 +90,12 @@ button {
   padding: 8px 12px;
 }
 
+button + button {
+  background: transparent;
+  border: 1px solid color-mix(in srgb, CanvasText 24%, transparent);
+  color: CanvasText;
+}
+
 button:hover {
   opacity: 0.85;
 }
@@ -83,6 +108,11 @@ dt {
 dd {
   margin: 0;
   overflow-wrap: anywhere;
+}
+
+.muted {
+  color: color-mix(in srgb, CanvasText 55%, transparent);
+  font-size: 12px;
 }
 
 footer {

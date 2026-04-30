@@ -2,7 +2,9 @@ import { App, applyDocumentTheme } from '@modelcontextprotocol/ext-apps';
 import {
   escapeText,
   formatAddress,
+  kindLabel,
   renderAttribution,
+  statusLabel,
   type Attribution,
   type Corporation,
 } from '../shared';
@@ -19,7 +21,12 @@ const root = document.getElementById('app');
 
 function renderEmpty(message: string): void {
   if (root === null) return;
-  root.innerHTML = `<p class="empty">${escapeText(message)}</p>`;
+  root.innerHTML = `
+    <section class="empty-state">
+      <p>${escapeText(message)}</p>
+      <small>lookup_corporate_by_number の結果を受け取ると、ここに法人カードが表示されます。</small>
+    </section>
+  `;
 }
 
 function renderCard(output: LookupOutput): void {
@@ -31,19 +38,18 @@ function renderCard(output: LookupOutput): void {
   }
 
   const address = formatAddress(corporation);
-  const status =
-    corporation.close_date !== '' ? 'Closed' : corporation.hihyoji === '1' ? 'Excluded' : 'Active';
+  const status = statusLabel(corporation);
   root.innerHTML = `
     <section class="header">
       <div>
         <h1>${escapeText(corporation.name)}</h1>
         ${corporation.en_name ? `<p class="en">${escapeText(corporation.en_name)}</p>` : ''}
       </div>
-      <span class="status">${escapeText(status)}</span>
+      <span class="status ${escapeText(status.className)}">${escapeText(status.label)}</span>
     </section>
     <dl class="facts">
       <dt>法人番号</dt><dd><code>${escapeText(corporation.corporate_number)}</code></dd>
-      <dt>法人種別コード</dt><dd>${escapeText(corporation.kind)}</dd>
+      <dt>法人種別</dt><dd>${escapeText(kindLabel(corporation.kind))} <span class="muted">(${escapeText(corporation.kind)})</span></dd>
       <dt>本店所在地</dt><dd>${escapeText(address)}</dd>
       <dt>郵便番号</dt><dd>${escapeText(corporation.post_code)}</dd>
       <dt>法人番号指定年月日</dt><dd>${escapeText(corporation.assignment_date)}</dd>
@@ -52,12 +58,16 @@ function renderCard(output: LookupOutput): void {
     </dl>
     <section class="actions">
       <button type="button" id="search-similar">類似商号を検索</button>
+      <button type="button" id="copy-number">法人番号をコピー</button>
     </section>
     <footer>${renderAttribution(output.attribution)}</footer>
   `;
 
   document.getElementById('search-similar')?.addEventListener('click', () => {
     void searchSimilar(corporation.name);
+  });
+  document.getElementById('copy-number')?.addEventListener('click', () => {
+    void navigator.clipboard?.writeText(corporation.corporate_number);
   });
 }
 
