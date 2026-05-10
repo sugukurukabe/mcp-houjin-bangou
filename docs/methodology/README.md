@@ -1,4 +1,4 @@
-# Methodology — @sugukuru-labs/mcp-houjin-bangou の構築手法
+# Methodology — @sugukuru/mcp-houjin-bangou の構築手法
 
 本ディレクトリは、本プロジェクトを構築した手法・思想を**再現可能な形**で整理したものです。
 将来の Sugukuru OSS Lab MCP サーバー（`mcp-jp-subsidy-hub`、`mcp-immigration-ja` 等）で

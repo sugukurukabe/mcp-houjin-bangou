@@ -1,5 +1,5 @@
 ---
-description: Sugukuru OSS Lab 共通開発規約 (applies to all packages under @sugukuru-labs/*)
+description: Sugukuru OSS Lab 共通開発規約 (applies to all packages under @sugukuru/*)
 globs: src/**, tests/**, docs/**, scripts/**
 alwaysApply: true
 ---

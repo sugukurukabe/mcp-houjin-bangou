@@ -26,7 +26,7 @@
 
 | 項番 | 項目名 | 入力内容 |
 |---|---|---|
-| 2.1 | プログラム・システム等の名称 | `@sugukuru-labs/mcp-houjin-bangou` (Model Context Protocol サーバ、MIT License、GitHub 公開予定) |
+| 2.1 | プログラム・システム等の名称 | `@sugukuru/mcp-houjin-bangou` (Model Context Protocol サーバ、MIT License、GitHub 公開予定) |
 | 2.2 | 取得した公表情報の利用方法 | Claude Desktop、Cursor、VS Code Copilot などの MCP クライアントから自然言語インターフェースで法人番号・適格請求書発行事業者情報を照会・検証する機能を提供。ユーザはリアルタイムに必要な情報のみを取得し、本サーバには一切保存しない (stateless / read-only 設計)。 |
 | 2.3 | ダウンロードファイルの利用有無 | **無し** (Web-API のみ利用。将来の差分同期は Tasks primitive で API 経由実装予定) |
 
@@ -98,11 +98,11 @@
 ### セクション 1. プロジェクト概要
 
 ```
-- プロジェクト名: @sugukuru-labs/mcp-houjin-bangou
+- プロジェクト名: @sugukuru/mcp-houjin-bangou
 - バージョン: v0.1.0 (2026-05-22 公開予定)
 - ライセンス: MIT License
 - 開発主体: スグクル株式会社 (鹿児島県鹿児島市)
-- GitHub リポジトリ: https://github.com/sugukuru-labs/mcp-houjin-bangou
+- GitHub リポジトリ: https://github.com/sugukurukabe/mcp-houjin-bangou
 - 公式サイト: https://sugukuru.co.jp
 ```
 
@@ -215,13 +215,13 @@ Claude Desktop / Cursor / VS Code Copilot 等の MCP クライアントから自
 
 ### セクション 8. 参考資料 URL
 
-- プロジェクトリポジトリ: https://github.com/sugukuru-labs/mcp-houjin-bangou
-- README (日本語): https://github.com/sugukuru-labs/mcp-houjin-bangou/blob/main/README.ja.md
-- API Reference: https://github.com/sugukuru-labs/mcp-houjin-bangou/blob/main/docs/api-reference.md
-- アーキテクチャ: https://github.com/sugukuru-labs/mcp-houjin-bangou/blob/main/docs/architecture.md
-- プロンプトインジェクション防御: https://github.com/sugukuru-labs/mcp-houjin-bangou/blob/main/docs/security/prompt-injection-defense.md
-- プライバシー方針: https://github.com/sugukuru-labs/mcp-houjin-bangou/blob/main/docs/policy/privacy-policy.md
-- 利用規約: https://github.com/sugukuru-labs/mcp-houjin-bangou/blob/main/docs/policy/terms-of-service.md
+- プロジェクトリポジトリ: https://github.com/sugukurukabe/mcp-houjin-bangou
+- README (日本語): https://github.com/sugukurukabe/mcp-houjin-bangou/blob/main/README.ja.md
+- API Reference: https://github.com/sugukurukabe/mcp-houjin-bangou/blob/main/docs/api-reference.md
+- アーキテクチャ: https://github.com/sugukurukabe/mcp-houjin-bangou/blob/main/docs/architecture.md
+- プロンプトインジェクション防御: https://github.com/sugukurukabe/mcp-houjin-bangou/blob/main/docs/security/prompt-injection-defense.md
+- プライバシー方針: https://github.com/sugukurukabe/mcp-houjin-bangou/blob/main/docs/policy/privacy-policy.md
+- 利用規約: https://github.com/sugukurukabe/mcp-houjin-bangou/blob/main/docs/policy/terms-of-service.md
 
 ---
 
@@ -234,7 +234,7 @@ Markdown → PDF 変換は以下が最速:
 pandoc excel-application-fields.md docs/architecture.md docs/policy/privacy-policy.md \
   -o houjin-bangou-mcp-program-overview.pdf \
   --pdf-engine=weasyprint \
-  --metadata title="@sugukuru-labs/mcp-houjin-bangou — プログラム概要"
+  --metadata title="@sugukuru/mcp-houjin-bangou — プログラム概要"
 
 # Chrome/Edge で Markdown プレビューから印刷 (PDF保存) も可
 ```

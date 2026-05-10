@@ -6,7 +6,7 @@
 
 ## 予定しているイメージ
 
-`ghcr.io/sugukuru-labs/mcp-houjin-bangou:v0.3.0` (GitHub Container Registry)
+`ghcr.io/sugukurukabe/mcp-houjin-bangou:v0.3.0` (GitHub Container Registry)
 
 ## Dockerfile 設計方針
 
@@ -42,7 +42,7 @@ CMD ["dist/server.js"]
 ```bash
 docker run --rm -p 3001:3001 \
   -e NTA_APPLICATION_ID=your-id \
-  ghcr.io/sugukuru-labs/mcp-houjin-bangou:v0.3.0
+  ghcr.io/sugukurukabe/mcp-houjin-bangou:v0.3.0
 ```
 
 ## Health check

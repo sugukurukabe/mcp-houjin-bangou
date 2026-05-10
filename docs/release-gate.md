@@ -82,12 +82,12 @@ Release date target: **2026-05-22**
 
 ## npm publish 準備 / npm publish readiness
 
-- [x] `package.json`: scoped public `@sugukuru-labs/mcp-houjin-bangou`
+- [x] `package.json`: scoped public `@sugukuru/mcp-houjin-bangou`
 - [x] `package.json`: provenance friendly (publishConfig, files, bin)
 - [x] `.npmignore` で不要ファイル除外
 - [ ] npm Trusted Publishing (GitHub OIDC) が npmjs.com 側で設定されている
 - [x] `pnpm publish --dry-run --access public` が成功 (218.9 kB / 151 files)
-- [ ] `npm info @sugukuru-labs/mcp-houjin-bangou` で name conflict なし
+- [ ] `npm info @sugukuru/mcp-houjin-bangou` で name conflict なし
 
 ## リリースアナウンス / Release announcement
 
@@ -111,7 +111,7 @@ Release date target: **2026-05-22**
 1. `git tag -a v0.2.0 -m "v0.2.0 — 国税庁法人番号 MCP の最初のリリース"`
 2. `git push origin main --tags`
 3. GitHub Actions が自動で npm publish + GitHub Release 作成
-4. npm レジストリで公開を確認 (`pnpm info @sugukuru-labs/mcp-houjin-bangou`)
+4. npm レジストリで公開を確認 (`pnpm info @sugukuru/mcp-houjin-bangou`)
 5. Zenn 記事公開後、すぐ v0.2.0 実装に戻る
 
 ---

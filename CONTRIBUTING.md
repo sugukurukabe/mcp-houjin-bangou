@@ -11,7 +11,7 @@
 - 国税庁アプリケーション ID (開発時は検証環境推奨、第一編 §7)
 
 ```bash
-git clone https://github.com/sugukuru-labs/mcp-houjin-bangou.git
+git clone https://github.com/sugukurukabe/mcp-houjin-bangou.git
 cd mcp-houjin-bangou
 pnpm install
 cp .env.example .env

@@ -64,7 +64,7 @@ https://www.invoice-kohyo.nta.go.jp/web-api/index.html
 別途 [`excel-application-fields.md`](excel-application-fields.md) に完全な入力案を記載。要旨:
 
 - **1. 事業概要**: スグクル株式会社の情報
-- **2. 取得した公表情報を利用するシステム**: `@sugukuru-labs/mcp-houjin-bangou` の概要
+- **2. 取得した公表情報を利用するシステム**: `@sugukuru/mcp-houjin-bangou` の概要
 - **3. 誓約事項**: すべて「はい」
 - **4. 法人番号システムWeb-API機能のみの利用希望の有無**: 「はい」(保険)
 
@@ -76,7 +76,7 @@ https://www.invoice-kohyo.nta.go.jp/web-api/index.html
 
 - `README.md` の主要セクション (英+日併記)
 - `docs/architecture.md` (Mermaid 図含む)
-- GitHub リポジトリ URL: https://github.com/sugukuru-labs/mcp-houjin-bangou
+- GitHub リポジトリ URL: https://github.com/sugukurukabe/mcp-houjin-bangou
 - 5 Tool + 3 Prompt + Resources の一覧 (`docs/api-reference.md` より)
 - プライバシー方針 (`docs/policy/privacy-policy.md`)
 - プロンプトインジェクション防御設計 (`docs/security/prompt-injection-defense.md`)
@@ -165,7 +165,7 @@ engineering@sugukuru.co.jp
 
 ### プログラム概要 (項番2.7.1) 添付 PDF の必須要素
 
-- [x] プログラム名: `@sugukuru-labs/mcp-houjin-bangou`
+- [x] プログラム名: `@sugukuru/mcp-houjin-bangou`
 - [x] 目的: 国税庁公表サイトの情報を Claude Desktop / Cursor / VS Code Copilot 等の MCP クライアントから自然言語で照会
 - [x] 機能概要: 5 MCP Tool + 3 MCP Prompt + Resources + Server Card
 - [x] アーキテクチャ図 (Mermaid)

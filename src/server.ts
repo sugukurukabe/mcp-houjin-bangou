@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * @sugukuru-labs/mcp-houjin-bangou - HTTP entrypoint
+ * @sugukuru/mcp-houjin-bangou - HTTP entrypoint
  *
  * Express + StreamableHTTPServerTransport (stateless mode)
  *
@@ -45,7 +45,7 @@ export async function bootstrap(): Promise<void> {
     baseUrl: env.NTA_BASE_URL,
     timeoutMs: env.NTA_TIMEOUT_MS,
     rps: env.NTA_RATE_LIMIT_RPS,
-    userAgent: `@sugukuru-labs/mcp-houjin-bangou/${VERSION}`,
+    userAgent: `@sugukuru/mcp-houjin-bangou/${VERSION}`,
     onBackoff: (waitMs) => {
       logger.warn({ waitMs }, 'NTA API rate limit hit, backoff applied');
     },
@@ -149,19 +149,19 @@ export async function bootstrap(): Promise<void> {
         mcpEndpoint: `http://localhost:${env.PORT}/mcp`,
         serverCardEndpoint: `http://localhost:${env.PORT}/.well-known/mcp.json`,
       },
-      '@sugukuru-labs/mcp-houjin-bangou listening',
+      '@sugukuru/mcp-houjin-bangou listening',
     );
   });
 }
 
 function buildServerCard(): object {
   return {
-    name: '@sugukuru-labs/mcp-houjin-bangou',
+    name: '@sugukuru/mcp-houjin-bangou',
     version: VERSION,
     description:
       'MCP server for Japan National Tax Agency Corporate Number Web-API (Ver.4.0). Read-only, anonymous, full 7-primitive activation.',
     protocol_version: '2025-11-25',
-    homepage: 'https://github.com/sugukuru-labs/mcp-houjin-bangou',
+    homepage: 'https://github.com/sugukurukabe/mcp-houjin-bangou',
     transport: {
       type: 'streamable-http',
       endpoint: '/mcp',

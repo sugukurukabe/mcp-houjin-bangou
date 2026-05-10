@@ -1,7 +1,7 @@
 ---
 theme: seriph
 title: "国税庁 target=1 を知り尽くして補完する MCP"
-subtitle: "@sugukuru-labs/mcp-houjin-bangou v0.1.0 から学ぶ MCP 公式 7 機能フル活性化"
+subtitle: "@sugukuru/mcp-houjin-bangou v0.1.0 から学ぶ MCP 公式 7 機能フル活性化"
 author: "壁 (スグクル株式会社 代表 / CTO)"
 date: "Private study notes, not for event participation"
 fonts:
@@ -16,7 +16,7 @@ mdc: true
 
 ## 少し間違った会社名から始まる
 
-#### @sugukuru-labs/mcp-houjin-bangou v0.1.0
+#### @sugukuru/mcp-houjin-bangou v0.1.0
 
 <br />
 
@@ -78,11 +78,11 @@ AI が制度の入口に立つ時代に、
 - 登壇よりも release、露出よりも原文、比較よりも実装
 
 ```
-@sugukuru-labs/mcp-houjin-bangou (本日)
+@sugukuru/mcp-houjin-bangou (本日)
 ↓
-@sugukuru-labs/mcp-jp-subsidy-hub (補助金統合)
+@sugukuru/mcp-jp-subsidy-hub (補助金統合)
 ↓
-@sugukuru-labs/mcp-immigration-ja (入管手続)
+@sugukuru/mcp-immigration-ja (入管手続)
 ↓
 ...
 ```
@@ -335,7 +335,7 @@ docs/methodology/
 - 段階的 release → v0.1.0 → v1.0.0 で 5 回の実装機会
 - 再利用可能な skill 化 → Sugukuru OSS Lab の創設リポとして次作以降のテンプレート
 
-GitHub: https://github.com/sugukuru-labs/mcp-houjin-bangou
+GitHub: https://github.com/sugukurukabe/mcp-houjin-bangou
 Zenn: https://zenn.dev/sugukuru/articles/mcp-houjin-bangou-v0.1.0
 
 ---

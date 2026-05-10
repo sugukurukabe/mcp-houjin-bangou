@@ -11,7 +11,7 @@
 ## インストール
 
 ```bash
-git clone https://github.com/sugukuru-labs/mcp-houjin-bangou.git
+git clone https://github.com/sugukurukabe/mcp-houjin-bangou.git
 cd mcp-houjin-bangou
 pnpm install --frozen-lockfile
 pnpm build
@@ -23,7 +23,7 @@ pnpm build
 
 ```ini
 [Unit]
-Description=@sugukuru-labs/mcp-houjin-bangou MCP Server
+Description=@sugukuru/mcp-houjin-bangou MCP Server
 After=network.target
 
 [Service]

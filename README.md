@@ -1,11 +1,11 @@
-# @sugukuru-labs/mcp-houjin-bangou
+# @sugukuru/mcp-houjin-bangou
 
 > **Model Context Protocol server for Japan's National Corporate Number (法人番号) Web-API by the National Tax Agency.**
 > Full activation of all 7 MCP primitives + deterministic company-name normalization for real-world fuzzy data.
 
-[![npm version](https://img.shields.io/npm/v/@sugukuru-labs/mcp-houjin-bangou.svg)](https://www.npmjs.com/package/@sugukuru-labs/mcp-houjin-bangou)
+[![npm version](https://img.shields.io/npm/v/@sugukuru/mcp-houjin-bangou.svg)](https://www.npmjs.com/package/@sugukuru/mcp-houjin-bangou)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![CI](https://github.com/sugukuru-labs/mcp-houjin-bangou/actions/workflows/ci.yml/badge.svg)](https://github.com/sugukuru-labs/mcp-houjin-bangou/actions/workflows/ci.yml)
+[![CI](https://github.com/sugukurukabe/mcp-houjin-bangou/actions/workflows/ci.yml/badge.svg)](https://github.com/sugukurukabe/mcp-houjin-bangou/actions/workflows/ci.yml)
 [![MCP Spec 2025-11-25](https://img.shields.io/badge/MCP-2025--11--25-blue)](https://modelcontextprotocol.io/specification/2025-11-25)
 
 🇯🇵 日本語版 README: [README.ja.md](README.ja.md)
@@ -35,7 +35,7 @@ All 5 tools come with **MCP Resources**, **Resource Templates** (`corp://{corpor
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@sugukuru-labs/mcp-houjin-bangou"],
+      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "YOUR_ID_HERE"
       }

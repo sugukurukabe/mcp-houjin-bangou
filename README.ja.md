@@ -1,9 +1,9 @@
-# @sugukuru-labs/mcp-houjin-bangou
+# @sugukuru/mcp-houjin-bangou
 
 > **国税庁 法人番号 Web-API を MCP (Model Context Protocol) 経由で使える公式推奨準拠・セキュアなサーバー。**
 > MCP 公式 7 機能すべて活性化 + 名刺OCR等の実務データで使える表記揺れ正規化。
 
-[![npm version](https://img.shields.io/npm/v/@sugukuru-labs/mcp-houjin-bangou.svg)](https://www.npmjs.com/package/@sugukuru-labs/mcp-houjin-bangou)
+[![npm version](https://img.shields.io/npm/v/@sugukuru/mcp-houjin-bangou.svg)](https://www.npmjs.com/package/@sugukuru/mcp-houjin-bangou)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 🌐 English README: [README.md](README.md)
@@ -37,7 +37,7 @@ https://www.invoice-kohyo.nta.go.jp/web-api/pre-reg/ から無料で発行され
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@sugukuru-labs/mcp-houjin-bangou"],
+      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "あなたのID"
       }

@@ -24,13 +24,13 @@
 ### Option A: npx (ゼロインストール、推奨)
 
 ```bash
-NTA_APPLICATION_ID=your-id-here npx -y @sugukuru-labs/mcp-houjin-bangou
+NTA_APPLICATION_ID=your-id-here npx -y @sugukuru/mcp-houjin-bangou
 ```
 
 ### Option B: セルフホスト
 
 ```bash
-git clone https://github.com/sugukuru-labs/mcp-houjin-bangou.git
+git clone https://github.com/sugukurukabe/mcp-houjin-bangou.git
 cd mcp-houjin-bangou
 pnpm install
 cp .env.example .env
@@ -48,7 +48,7 @@ pnpm start
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@sugukuru-labs/mcp-houjin-bangou"],
+      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "YOUR_ID_HERE"
       }
@@ -68,7 +68,7 @@ Claude Desktop を再起動。
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@sugukuru-labs/mcp-houjin-bangou"],
+      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "YOUR_ID_HERE"
       }

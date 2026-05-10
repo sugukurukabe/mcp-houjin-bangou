@@ -43,8 +43,8 @@ B2B の取引先管理・経理業務の効率化を目的として、Model Cont
 Anthropic が策定したオープンな標準プロトコル) に準拠した以下のサーバを
 オープンソース (MIT License) として開発・運用しております。
 
-- プロジェクト名: @sugukuru-labs/mcp-houjin-bangou
-- GitHub: https://github.com/sugukuru-labs/mcp-houjin-bangou
+- プロジェクト名: @sugukuru/mcp-houjin-bangou
+- GitHub: https://github.com/sugukurukabe/mcp-houjin-bangou
 - 用途: Claude Desktop 等の MCP クライアントから自然言語で
          法人番号・適格請求書発行事業者情報を照会・検証
 - v0.1.0 (2026-05 公開予定): 法人番号システム Web-API 機能を利用

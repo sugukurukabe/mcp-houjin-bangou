@@ -9,7 +9,7 @@
 **対処**:
 
 - Claude Desktop: `claude_desktop_config.json` の `env.NTA_APPLICATION_ID` を設定
-- CLI: `NTA_APPLICATION_ID=xxx npx -y @sugukuru-labs/mcp-houjin-bangou`
+- CLI: `NTA_APPLICATION_ID=xxx npx -y @sugukuru/mcp-houjin-bangou`
 - `.env` ファイル: `cp .env.example .env` して値を書く
 
 ### `EADDRINUSE: address already in use :::3001`
@@ -106,7 +106,7 @@ NTA_APPLICATION_ID=your-id pnpm smoke:live
 
 1. 入力を `tools/call normalize_company_name` で直接試し、`applied_rules` を確認
 2. 該当パターンが `src/domain/normalizer.ts` の `OLD_TO_NEW` / `KIND_KEYWORDS_JA` / `EN_SUFFIX_PATTERNS` に含まれているか確認
-3. 含まれていなければ [Feature request](https://github.com/sugukuru-labs/mcp-houjin-bangou/issues/new?template=feature_request.yml) を立てる
+3. 含まれていなければ [Feature request](https://github.com/sugukurukabe/mcp-houjin-bangou/issues/new?template=feature_request.yml) を立てる
 
 ### 「この揺れは国税庁 `target=1` が吸収すべき」と判定された
 
@@ -129,7 +129,7 @@ NTA_APPLICATION_ID=your-id pnpm smoke:live
 ## 詳細なログを取りたい
 
 ```bash
-LOG_LEVEL=debug NTA_APPLICATION_ID=xxx npx -y @sugukuru-labs/mcp-houjin-bangou
+LOG_LEVEL=debug NTA_APPLICATION_ID=xxx npx -y @sugukuru/mcp-houjin-bangou
 ```
 
 Application ID は自動的にログから redact されます。
@@ -137,5 +137,5 @@ Application ID は自動的にログから redact されます。
 ## それでも解決しない場合
 
 1. [SECURITY.md](../SECURITY.md) に該当するセキュリティ問題なら `security@sugukuru.co.jp`
-2. それ以外は [GitHub Issues](https://github.com/sugukuru-labs/mcp-houjin-bangou/issues) に `bug_report` テンプレで投稿
+2. それ以外は [GitHub Issues](https://github.com/sugukurukabe/mcp-houjin-bangou/issues) に `bug_report` テンプレで投稿
 3. 国税庁 API 仕様変化を疑う場合は `api_drift` テンプレで投稿

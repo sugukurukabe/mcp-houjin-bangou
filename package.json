@@ -1,16 +1,16 @@
 {
-  "name": "@sugukuru-labs/mcp-houjin-bangou",
+  "name": "@sugukuru/mcp-houjin-bangou",
   "version": "0.2.0",
   "description": "Model Context Protocol server for Japan's National Corporate Number (houjin-bangou) Web-API by NTA. MCP 7-primitive full activation + deterministic name normalization.",
   "license": "MIT",
   "author": "Sugukuru K.K. (Kagoshima) <engineering@sugukuru.co.jp>",
-  "homepage": "https://github.com/sugukuru-labs/mcp-houjin-bangou#readme",
+  "homepage": "https://github.com/sugukurukabe/mcp-houjin-bangou#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sugukuru-labs/mcp-houjin-bangou.git"
+    "url": "https://github.com/sugukurukabe/mcp-houjin-bangou.git"
   },
   "bugs": {
-    "url": "https://github.com/sugukuru-labs/mcp-houjin-bangou/issues"
+    "url": "https://github.com/sugukurukabe/mcp-houjin-bangou/issues"
   },
   "keywords": [
     "mcp",
