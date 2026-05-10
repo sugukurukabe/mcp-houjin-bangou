@@ -9,7 +9,7 @@
 **対処**:
 
 - Claude Desktop: `claude_desktop_config.json` の `env.NTA_APPLICATION_ID` を設定
-- CLI: `NTA_APPLICATION_ID=xxx npx -y @sugukuru/mcp-houjin-bangou`
+- CLI: `NTA_APPLICATION_ID=xxx npx -y @drapt-lab/mcp-houjin-bangou`
 - `.env` ファイル: `cp .env.example .env` して値を書く
 
 ### `EADDRINUSE: address already in use :::3001`
@@ -129,7 +129,7 @@ NTA_APPLICATION_ID=your-id pnpm smoke:live
 ## 詳細なログを取りたい
 
 ```bash
-LOG_LEVEL=debug NTA_APPLICATION_ID=xxx npx -y @sugukuru/mcp-houjin-bangou
+LOG_LEVEL=debug NTA_APPLICATION_ID=xxx npx -y @drapt-lab/mcp-houjin-bangou
 ```
 
 Application ID は自動的にログから redact されます。

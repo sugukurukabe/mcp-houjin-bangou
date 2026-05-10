@@ -2,7 +2,7 @@
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
+      "args": ["-y", "@drapt-lab/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "<YOUR_NTA_APPLICATION_ID_FROM_https://www.invoice-kohyo.nta.go.jp/web-api/pre-reg/>",
         "LOG_LEVEL": "info"

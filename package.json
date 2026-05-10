@@ -1,5 +1,5 @@
 {
-  "name": "@sugukuru/mcp-houjin-bangou",
+  "name": "@drapt-lab/mcp-houjin-bangou",
   "version": "0.2.0",
   "description": "Model Context Protocol server for Japan's National Corporate Number (houjin-bangou) Web-API by NTA. MCP 7-primitive full activation + deterministic name normalization.",
   "license": "MIT",

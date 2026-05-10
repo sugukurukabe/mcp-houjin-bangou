@@ -22,7 +22,7 @@ async function main(): Promise<void> {
     baseUrl: env.NTA_BASE_URL,
     timeoutMs: env.NTA_TIMEOUT_MS,
     rps: env.NTA_RATE_LIMIT_RPS,
-    userAgent: '@sugukuru/mcp-houjin-bangou/live-smoke',
+    userAgent: '@drapt-lab/mcp-houjin-bangou/live-smoke',
   });
 
   const validation = normalizeAndValidateCorporateNumber(SAMPLE_CORPORATE_NUMBER);

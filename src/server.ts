@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * @sugukuru/mcp-houjin-bangou - HTTP entrypoint
+ * @drapt-lab/mcp-houjin-bangou - HTTP entrypoint
  *
  * Express + StreamableHTTPServerTransport (stateless mode)
  *
@@ -45,7 +45,7 @@ export async function bootstrap(): Promise<void> {
     baseUrl: env.NTA_BASE_URL,
     timeoutMs: env.NTA_TIMEOUT_MS,
     rps: env.NTA_RATE_LIMIT_RPS,
-    userAgent: `@sugukuru/mcp-houjin-bangou/${VERSION}`,
+    userAgent: `@drapt-lab/mcp-houjin-bangou/${VERSION}`,
     onBackoff: (waitMs) => {
       logger.warn({ waitMs }, 'NTA API rate limit hit, backoff applied');
     },
@@ -149,14 +149,14 @@ export async function bootstrap(): Promise<void> {
         mcpEndpoint: `http://localhost:${env.PORT}/mcp`,
         serverCardEndpoint: `http://localhost:${env.PORT}/.well-known/mcp.json`,
       },
-      '@sugukuru/mcp-houjin-bangou listening',
+      '@drapt-lab/mcp-houjin-bangou listening',
     );
   });
 }
 
 function buildServerCard(): object {
   return {
-    name: '@sugukuru/mcp-houjin-bangou',
+    name: '@drapt-lab/mcp-houjin-bangou',
     version: VERSION,
     description:
       'MCP server for Japan National Tax Agency Corporate Number Web-API (Ver.4.0). Read-only, anonymous, full 7-primitive activation.',

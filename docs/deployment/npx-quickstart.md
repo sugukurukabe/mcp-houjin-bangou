@@ -10,7 +10,7 @@
 ## 起動
 
 ```bash
-NTA_APPLICATION_ID=your-id npx -y @sugukuru/mcp-houjin-bangou
+NTA_APPLICATION_ID=your-id npx -y @drapt-lab/mcp-houjin-bangou
 ```
 
 デフォルトでポート 3001 で起動します。
@@ -28,7 +28,7 @@ curl http://localhost:3001/health
 # => {"status":"ok","version":"0.1.0","nta_api_version":"Ver.4.0",...}
 
 curl http://localhost:3001/.well-known/mcp.json | head -c 200
-# => {"name":"@sugukuru/mcp-houjin-bangou","version":"0.1.0",...
+# => {"name":"@drapt-lab/mcp-houjin-bangou","version":"0.1.0",...
 ```
 
 ## Claude Desktop から接続
@@ -40,7 +40,7 @@ curl http://localhost:3001/.well-known/mcp.json | head -c 200
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
+      "args": ["-y", "@drapt-lab/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "your-id"
       }
@@ -56,7 +56,7 @@ curl http://localhost:3001/.well-known/mcp.json | head -c 200
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx.cmd",
-      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
+      "args": ["-y", "@drapt-lab/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "your-id"
       }
@@ -82,5 +82,5 @@ curl http://localhost:3001/.well-known/mcp.json | head -c 200
 `npx -y` は常に最新版を取得します。固定したい場合:
 
 ```bash
-NTA_APPLICATION_ID=... npx -y @sugukuru/mcp-houjin-bangou@0.1.0
+NTA_APPLICATION_ID=... npx -y @drapt-lab/mcp-houjin-bangou@0.1.0
 ```

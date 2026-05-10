@@ -1,9 +1,9 @@
-# @sugukuru/mcp-houjin-bangou
+# @drapt-lab/mcp-houjin-bangou
 
 > **国税庁 法人番号 Web-API を MCP (Model Context Protocol) 経由で使える公式推奨準拠・セキュアなサーバー。**
 > MCP 公式 7 機能すべて活性化 + 名刺OCR等の実務データで使える表記揺れ正規化。
 
-[![npm version](https://img.shields.io/npm/v/@sugukuru/mcp-houjin-bangou.svg)](https://www.npmjs.com/package/@sugukuru/mcp-houjin-bangou)
+[![npm version](https://img.shields.io/npm/v/@drapt-lab/mcp-houjin-bangou.svg)](https://www.npmjs.com/package/@drapt-lab/mcp-houjin-bangou)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 🌐 English README: [README.md](README.md)
@@ -37,7 +37,7 @@ https://www.invoice-kohyo.nta.go.jp/web-api/pre-reg/ から無料で発行され
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
+      "args": ["-y", "@drapt-lab/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "あなたのID"
       }
@@ -175,7 +175,7 @@ pnpm publish --dry-run --no-git-checks --access public
 | `isValidCheckDigit` | 約 10.1M ops/sec |
 | `normalizeCompanyName` | 約 344k ops/sec |
 | `parseNtaCsv` | 約 389k ops/sec |
-| npm dry-run tarball | 218.9 kB / 151 files |
+| npm dry-run tarball | 250.6 kB / 151 files |
 
 ## 出典
 

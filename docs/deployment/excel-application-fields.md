@@ -26,7 +26,7 @@
 
 | 項番 | 項目名 | 入力内容 |
 |---|---|---|
-| 2.1 | プログラム・システム等の名称 | `@sugukuru/mcp-houjin-bangou` (Model Context Protocol サーバ、MIT License、GitHub 公開予定) |
+| 2.1 | プログラム・システム等の名称 | `@drapt-lab/mcp-houjin-bangou` (Model Context Protocol サーバ、MIT License、GitHub 公開予定) |
 | 2.2 | 取得した公表情報の利用方法 | Claude Desktop、Cursor、VS Code Copilot などの MCP クライアントから自然言語インターフェースで法人番号・適格請求書発行事業者情報を照会・検証する機能を提供。ユーザはリアルタイムに必要な情報のみを取得し、本サーバには一切保存しない (stateless / read-only 設計)。 |
 | 2.3 | ダウンロードファイルの利用有無 | **無し** (Web-API のみ利用。将来の差分同期は Tasks primitive で API 経由実装予定) |
 
@@ -98,7 +98,7 @@
 ### セクション 1. プロジェクト概要
 
 ```
-- プロジェクト名: @sugukuru/mcp-houjin-bangou
+- プロジェクト名: @drapt-lab/mcp-houjin-bangou
 - バージョン: v0.1.0 (2026-05-22 公開予定)
 - ライセンス: MIT License
 - 開発主体: スグクル株式会社 (鹿児島県鹿児島市)
@@ -234,7 +234,7 @@ Markdown → PDF 変換は以下が最速:
 pandoc excel-application-fields.md docs/architecture.md docs/policy/privacy-policy.md \
   -o houjin-bangou-mcp-program-overview.pdf \
   --pdf-engine=weasyprint \
-  --metadata title="@sugukuru/mcp-houjin-bangou — プログラム概要"
+  --metadata title="@drapt-lab/mcp-houjin-bangou — プログラム概要"
 
 # Chrome/Edge で Markdown プレビューから印刷 (PDF保存) も可
 ```

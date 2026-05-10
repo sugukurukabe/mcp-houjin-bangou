@@ -1,5 +1,5 @@
 ---
-description: Sugukuru OSS Lab 共通開発規約 (applies to all packages under @sugukuru/*)
+description: Sugukuru OSS Lab 共通開発規約 (applies to all packages under @drapt-lab/*)
 globs: src/**, tests/**, docs/**, scripts/**
 alwaysApply: true
 ---

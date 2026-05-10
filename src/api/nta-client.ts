@@ -77,7 +77,7 @@ export interface NtaClient {
 export function createNtaClient(config: NtaClientConfig): NtaClient {
   const fetchImpl = config.fetchImpl ?? globalThis.fetch;
   const limiter = new TokenBucket({ rps: config.rps });
-  const userAgent = config.userAgent ?? '@sugukuru/mcp-houjin-bangou';
+  const userAgent = config.userAgent ?? '@drapt-lab/mcp-houjin-bangou';
 
   async function callApi(
     path: string,

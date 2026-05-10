@@ -1,9 +1,9 @@
-# @sugukuru/mcp-houjin-bangou
+# @drapt-lab/mcp-houjin-bangou
 
 > **Model Context Protocol server for Japan's National Corporate Number (法人番号) Web-API by the National Tax Agency.**
 > Full activation of all 7 MCP primitives + deterministic company-name normalization for real-world fuzzy data.
 
-[![npm version](https://img.shields.io/npm/v/@sugukuru/mcp-houjin-bangou.svg)](https://www.npmjs.com/package/@sugukuru/mcp-houjin-bangou)
+[![npm version](https://img.shields.io/npm/v/@drapt-lab/mcp-houjin-bangou.svg)](https://www.npmjs.com/package/@drapt-lab/mcp-houjin-bangou)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/sugukurukabe/mcp-houjin-bangou/actions/workflows/ci.yml/badge.svg)](https://github.com/sugukurukabe/mcp-houjin-bangou/actions/workflows/ci.yml)
 [![MCP Spec 2025-11-25](https://img.shields.io/badge/MCP-2025--11--25-blue)](https://modelcontextprotocol.io/specification/2025-11-25)
@@ -35,7 +35,7 @@ All 5 tools come with **MCP Resources**, **Resource Templates** (`corp://{corpor
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
+      "args": ["-y", "@drapt-lab/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "YOUR_ID_HERE"
       }
@@ -177,7 +177,7 @@ Current local verification snapshot:
 | `isValidCheckDigit` | ~10.1M ops/sec |
 | `normalizeCompanyName` | ~344k ops/sec |
 | `parseNtaCsv` | ~389k ops/sec |
-| npm dry-run tarball | 218.9 kB / 151 files |
+| npm dry-run tarball | 250.6 kB / 151 files |
 
 ## Attribution
 

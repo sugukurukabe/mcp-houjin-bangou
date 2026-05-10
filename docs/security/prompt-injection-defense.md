@@ -1,10 +1,10 @@
 # Prompt Injection Defense
 
-本ドキュメントは `@sugukuru/mcp-houjin-bangou` における **プロンプトインジェクション攻撃** への防御設計を公開するものです。透明性を持って攻撃面と緩和策を明示することで、コミュニティからの脆弱性発見を歓迎します。
+本ドキュメントは `@drapt-lab/mcp-houjin-bangou` における **プロンプトインジェクション攻撃** への防御設計を公開するものです。透明性を持って攻撃面と緩和策を明示することで、コミュニティからの脆弱性発見を歓迎します。
 
-This document publishes the prompt injection defense design of `@sugukuru/mcp-houjin-bangou`. We transparently disclose our attack surface and mitigations to welcome vulnerability reports from the community.
+This document publishes the prompt injection defense design of `@drapt-lab/mcp-houjin-bangou`. We transparently disclose our attack surface and mitigations to welcome vulnerability reports from the community.
 
-Dokumen ini menjelaskan pertahanan prompt injection di `@sugukuru/mcp-houjin-bangou`.
+Dokumen ini menjelaskan pertahanan prompt injection di `@drapt-lab/mcp-houjin-bangou`.
 
 ## 参考文献 / References
 
@@ -35,7 +35,7 @@ Dokumen ini menjelaskan pertahanan prompt injection di `@sugukuru/mcp-houjin-ban
 **本プロジェクトの緩和**:
 
 - **状態を持たない stateless mode** で動作 → shadowing の攻撃面を提供しない
-- **namespace 明示**: パッケージ名 `@sugukuru/mcp-houjin-bangou` でツール所有を可視化
+- **namespace 明示**: パッケージ名 `@drapt-lab/mcp-houjin-bangou` でツール所有を可視化
 - **MCP ホストの責任領域**: 本サーバーから他サーバーへのツール呼び出しは一切行わない (sampling capability も未宣言)
 
 ### 3. Tool Poisoning

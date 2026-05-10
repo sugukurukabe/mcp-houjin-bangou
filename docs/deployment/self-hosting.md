@@ -23,7 +23,7 @@ pnpm build
 
 ```ini
 [Unit]
-Description=@sugukuru/mcp-houjin-bangou MCP Server
+Description=@drapt-lab/mcp-houjin-bangou MCP Server
 After=network.target
 
 [Service]

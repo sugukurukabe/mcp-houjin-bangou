@@ -82,13 +82,13 @@ Release date target: **2026-05-22**
 
 ## npm publish 準備 / npm publish readiness
 
-- [x] `package.json`: scoped public `@sugukuru/mcp-houjin-bangou`
+- [x] `package.json`: scoped public `@drapt-lab/mcp-houjin-bangou`
 - [x] `package.json`: provenance friendly (publishConfig, files, bin)
 - [x] `.npmignore` で不要ファイル除外
 - [ ] npm Trusted Publishing (GitHub OIDC) が npmjs.com 側で設定されている
   - 初回公開手順: `docs/deployment/npm-publishing.md`
-- [x] `pnpm publish --dry-run --access public` が成功 (218.9 kB / 151 files)
-- [ ] `npm info @sugukuru/mcp-houjin-bangou` で name conflict なし
+- [x] `pnpm publish --dry-run --access public` が成功 (250.6 kB / 151 files)
+- [ ] `npm info @drapt-lab/mcp-houjin-bangou` で name conflict なし
 
 ## リリースアナウンス / Release announcement
 
@@ -109,10 +109,10 @@ Release date target: **2026-05-22**
 
 ## 品質ゲート通過後の最終手順 / Final steps
 
-1. npm 側で `@sugukuru/mcp-houjin-bangou` の Trusted Publishing を設定する
+1. npm 側で `@drapt-lab/mcp-houjin-bangou` の Trusted Publishing を設定する
 2. GitHub Actions `Release` workflow を `v0.2.0` で再実行する
 3. GitHub Actions が自動で npm publish + GitHub Release 作成
-4. npm レジストリで公開を確認 (`pnpm info @sugukuru/mcp-houjin-bangou`)
+4. npm レジストリで公開を確認 (`pnpm info @drapt-lab/mcp-houjin-bangou`)
 5. Zenn 記事公開後、すぐ次の実装に戻る
 
 ---

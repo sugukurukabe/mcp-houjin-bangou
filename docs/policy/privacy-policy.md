@@ -4,7 +4,7 @@
 
 ## 対象 / Scope
 
-本ポリシーは `@sugukuru/mcp-houjin-bangou` の Hosted 版 (v0.5.0+ 予定) およびリファレンス実装に適用されます。
+本ポリシーは `@drapt-lab/mcp-houjin-bangou` の Hosted 版 (v0.5.0+ 予定) およびリファレンス実装に適用されます。
 
 npx や Docker でユーザー自身の環境で実行する場合、本プロジェクト自体はテレメトリを収集しません (no-op)。
 

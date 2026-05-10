@@ -14,12 +14,12 @@ published: false
 
 この MCP は、その手作業の記憶をプロトコルに移す試みです。
 
-Sugukuru OSS Lab の最初のリリースとして、**国税庁 法人番号 Web-API (Ver.4.0) を Model Context Protocol サーバーで提供する `@sugukuru/mcp-houjin-bangou`** を v0.1.0 として公開しました。
+Sugukuru OSS Lab の最初のリリースとして、**国税庁 法人番号 Web-API (Ver.4.0) を Model Context Protocol サーバーで提供する `@drapt-lab/mcp-houjin-bangou`** を v0.1.0 として公開しました。
 
 Claude Desktop / Cursor / VS Code Copilot 等の MCP クライアントから、自然言語で 13 桁の法人番号検索・会社名検索・チェックデジット検証ができます。
 
 ```bash
-NTA_APPLICATION_ID=your-id npx -y @sugukuru/mcp-houjin-bangou
+NTA_APPLICATION_ID=your-id npx -y @drapt-lab/mcp-houjin-bangou
 ```
 
 ただの API ラッパーを出したいわけではありません。自分にとって問題だったのは、法人番号 API を呼べるかどうかではなく、**仕様書に既に書かれている知性を、どこまで尊重できるか** でした。
@@ -154,7 +154,7 @@ Claude Desktop の `claude_desktop_config.json` に:
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
+      "args": ["-y", "@drapt-lab/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "あなたのID"
       }
@@ -187,7 +187,7 @@ Claude Desktop を再起動して試す:
 鹿児島のインドネシア人特定技能派遣会社 (スグクル株式会社) がオープンソースで日本経済に貢献する、という挑戦の 1 本目です。次は `mcp-jp-subsidy-hub` (補助金統合 MCP)、`mcp-immigration-ja` (入管手続 MCP) を予定しています。
 
 GitHub: https://github.com/sugukurukabe/mcp-houjin-bangou
-npm: https://www.npmjs.com/package/@sugukuru/mcp-houjin-bangou
+npm: https://www.npmjs.com/package/@drapt-lab/mcp-houjin-bangou
 
 Issue や PR はもちろん開いています。ただ、このプロジェクトの中心は露出ではありません。次の仕様書を読み、次の schema を固め、次の release を出すことです。
 
