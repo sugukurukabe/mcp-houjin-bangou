@@ -175,7 +175,7 @@ pnpm publish --dry-run --no-git-checks --access public
 | `isValidCheckDigit` | 約 10.1M ops/sec |
 | `normalizeCompanyName` | 約 344k ops/sec |
 | `parseNtaCsv` | 約 389k ops/sec |
-| npm dry-run tarball | 218.5 kB / 151 files |
+| npm dry-run tarball | 218.9 kB / 151 files |
 
 ## 出典
 

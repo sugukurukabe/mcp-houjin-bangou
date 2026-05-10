@@ -177,7 +177,7 @@ Current local verification snapshot:
 | `isValidCheckDigit` | ~10.1M ops/sec |
 | `normalizeCompanyName` | ~344k ops/sec |
 | `parseNtaCsv` | ~389k ops/sec |
-| npm dry-run tarball | 218.5 kB / 151 files |
+| npm dry-run tarball | 218.9 kB / 151 files |
 
 ## Attribution
 

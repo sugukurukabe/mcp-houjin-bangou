@@ -31,6 +31,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - npm Trusted Publishing / GitHub OIDC (removed `NPM_TOKEN` dependency)
   - CycloneDX SBOM workflow
 
+### Verified
+
+- 2026-05-10: NTA live smoke passed with approved application ID
+  - local validation: `7000012050002` OK
+  - `/4/num`: count=1, first=`7000012050002 国税庁`
+  - `/4/name`: count=2, divide=1/1
+  - result: `NTA live smoke: OK`
+
 ### Added (v0.3.0 準備層)
 
 - `src/domain/invoice-number.ts`: T番号 (T+13桁) Branded type + 正規化検証 (全角/半角/ハイフン/小文字T 対応)
