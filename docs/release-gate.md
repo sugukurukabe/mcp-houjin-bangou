@@ -30,6 +30,7 @@ Release date target: **2026-05-22**
 - [x] `validate_corporate_number` (端末上で 5111101000006 → is_valid: true 検証済み)
 - [x] `normalize_company_name` (端末上で `（株）高橋商事` → 3 候補 検証済み)
 - [x] `get_attribution` (実装完了、出典文字列生成ロジック pass)
+- [ ] `pnpm smoke:live` (本番アプリケーション ID で `/4/num` + `/4/name` 確認)
 
 ## Server Card / 発見可能性
 

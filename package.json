@@ -62,7 +62,8 @@
     "bench": "tsx benchmarks/run.ts",
     "prepublishOnly": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run build",
     "health-check": "tsx scripts/api-id-keepalive.ts",
-    "smoke": "tsx scripts/mcp-smoke.ts"
+    "smoke": "tsx scripts/mcp-smoke.ts",
+    "smoke:live": "tsx scripts/nta-live-smoke.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/ext-apps": "^1.7.1",

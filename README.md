@@ -46,6 +46,14 @@ All 5 tools come with **MCP Resources**, **Resource Templates** (`corp://{corpor
 
 3. Restart Claude Desktop. Try:
 
+After receiving the NTA application ID, first run the live smoke check locally:
+
+```bash
+NTA_APPLICATION_ID=your-id pnpm smoke:live
+```
+
+The ID is never printed. The command verifies both `/4/num` and `/4/name`.
+
 > "株式会社スグクルの法人番号と本店所在地を教えて"
 
 ### Cursor / VS Code

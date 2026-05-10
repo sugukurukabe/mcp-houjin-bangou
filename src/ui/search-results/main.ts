@@ -30,10 +30,9 @@ function render(output: SearchOutput): void {
   }
 
   const rows = corporations
-    .map(
-      (c) => {
-        const status = statusLabel(c);
-        return `
+    .map((c) => {
+      const status = statusLabel(c);
+      return `
         <tr class="result-row" data-corporate-number="${escapeText(c.corporate_number)}">
           <td><code>${escapeText(c.corporate_number)}</code></td>
           <td>${escapeText(c.name)}</td>
@@ -41,8 +40,7 @@ function render(output: SearchOutput): void {
           <td><span class="status ${escapeText(status.className)}">${escapeText(status.label)}</span></td>
         </tr>
       `;
-      },
-    )
+    })
     .join('');
 
   root.innerHTML = `

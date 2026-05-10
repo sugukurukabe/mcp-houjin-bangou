@@ -81,6 +81,16 @@ Cursor を再起動 (または設定の "MCP Servers" から Reload)。
 
 ## 6. 動作確認 — 5 つの prompt を試す
 
+### 本番 API 接続確認
+
+アプリケーション ID 取得後、まず live smoke を実行してください。ID は表示されません。
+
+```bash
+NTA_APPLICATION_ID=your-id pnpm smoke:live
+```
+
+成功すると `/4/num` と `/4/name` の両方が確認されます。
+
 Claude Desktop または Cursor で:
 
 ### UC-1: 法人番号で検索

@@ -48,6 +48,14 @@ https://www.invoice-kohyo.nta.go.jp/web-api/pre-reg/ から無料で発行され
 
 ### 3. Claude Desktop を再起動して試す
 
+本番 ID が届いたら、まずローカルで live smoke を実行してください。
+
+```bash
+NTA_APPLICATION_ID=あなたのID pnpm smoke:live
+```
+
+ID はログに出力されません。`/4/num` と `/4/name` の両方を確認します。
+
 > 株式会社スグクルの法人番号 5111101000006 の本店所在地と登記日を教えて
 
 > 「（株）高橋商事」の表記揺れを正規化して、国税庁で全候補を検索して

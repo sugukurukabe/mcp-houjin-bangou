@@ -20,6 +20,14 @@
 
 ## API エラー
 
+### 本番 ID が届いた後の最初の確認
+
+```bash
+NTA_APPLICATION_ID=your-id pnpm smoke:live
+```
+
+このコマンドは ID を出力せず、サンプル法人番号で `/4/num` と `/4/name` を確認します。
+
 ### 国税庁 HTTP 403 (レート制限)
 
 > `NtaApiError: Rate limited by NTA. Backoff 30000ms applied. (別添1 第9条第1項三号)`
