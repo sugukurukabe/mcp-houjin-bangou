@@ -17,7 +17,7 @@ async function main(): Promise<void> {
     baseUrl: env.NTA_BASE_URL,
     timeoutMs: env.NTA_TIMEOUT_MS,
     rps: env.NTA_RATE_LIMIT_RPS,
-    userAgent: '@drapt-lab/mcp-houjin-bangou/keepalive',
+    userAgent: '@sugukuru/mcp-houjin-bangou/keepalive',
   });
 
   process.stdout.write('Pinging NTA Web-API...\n');

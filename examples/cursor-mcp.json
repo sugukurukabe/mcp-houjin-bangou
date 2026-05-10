@@ -2,7 +2,7 @@
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@drapt-lab/mcp-houjin-bangou"],
+      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "<YOUR_APPLICATION_ID>"
       }

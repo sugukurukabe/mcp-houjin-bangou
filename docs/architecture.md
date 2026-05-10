@@ -10,7 +10,7 @@ flowchart LR
     VSCode["VS Code Copilot"]
   end
 
-  subgraph Server["@drapt-lab/mcp-houjin-bangou (Node.js)"]
+  subgraph Server["@sugukuru/mcp-houjin-bangou (Node.js)"]
     direction TB
     Express["Express 4"]
     Transport["StreamableHTTPServerTransport<br/>stateless"]

@@ -1,7 +1,7 @@
 ---
 theme: seriph
 title: "国税庁 target=1 を知り尽くして補完する MCP"
-subtitle: "@drapt-lab/mcp-houjin-bangou v0.1.0 から学ぶ MCP 公式 7 機能フル活性化"
+subtitle: "@sugukuru/mcp-houjin-bangou v0.1.0 から学ぶ MCP 公式 7 機能フル活性化"
 author: "壁 (スグクル株式会社 代表 / CTO)"
 date: "Private study notes, not for event participation"
 fonts:
@@ -16,7 +16,7 @@ mdc: true
 
 ## 少し間違った会社名から始まる
 
-#### @drapt-lab/mcp-houjin-bangou v0.1.0
+#### @sugukuru/mcp-houjin-bangou v0.1.0
 
 <br />
 
@@ -78,11 +78,11 @@ AI が制度の入口に立つ時代に、
 - 登壇よりも release、露出よりも原文、比較よりも実装
 
 ```
-@drapt-lab/mcp-houjin-bangou (本日)
+@sugukuru/mcp-houjin-bangou (本日)
 ↓
-@drapt-lab/mcp-jp-subsidy-hub (補助金統合)
+@sugukuru/mcp-jp-subsidy-hub (補助金統合)
 ↓
-@drapt-lab/mcp-immigration-ja (入管手続)
+@sugukuru/mcp-immigration-ja (入管手続)
 ↓
 ...
 ```

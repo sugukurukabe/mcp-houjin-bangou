@@ -24,7 +24,7 @@
 ### Option A: npx (ゼロインストール、推奨)
 
 ```bash
-NTA_APPLICATION_ID=your-id-here npx -y @drapt-lab/mcp-houjin-bangou
+NTA_APPLICATION_ID=your-id-here npx -y @sugukuru/mcp-houjin-bangou
 ```
 
 ### Option B: セルフホスト
@@ -48,7 +48,7 @@ pnpm start
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@drapt-lab/mcp-houjin-bangou"],
+      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "YOUR_ID_HERE"
       }
@@ -68,7 +68,7 @@ Claude Desktop を再起動。
   "mcpServers": {
     "houjin-bangou": {
       "command": "npx",
-      "args": ["-y", "@drapt-lab/mcp-houjin-bangou"],
+      "args": ["-y", "@sugukuru/mcp-houjin-bangou"],
       "env": {
         "NTA_APPLICATION_ID": "YOUR_ID_HERE"
       }

@@ -20,7 +20,7 @@ Sugukuru OSS Lab 創設リポジトリのライセンス選定。候補は MIT /
 
 - 既存の Japanese OSS エコシステム (SmartHR / yusukebe/Hono 等) と同じスタンスで、採用敷居が低い
 - 個人開発者から企業ユーザーまで広く使える最シンプルライセンス
-- scoped npm package `@drapt-lab/*` は `--access public` で問題なく公開可能
+- scoped npm package `@sugukuru/*` は `--access public` で問題なく公開可能
 - downstream が Apache-2.0 に再ライセンスして使うことも可能
 
 ### Neutral

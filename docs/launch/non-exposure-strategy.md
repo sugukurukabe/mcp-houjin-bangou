@@ -65,7 +65,7 @@
 ## 使ってよい短い公開文
 
 ```text
-@drapt-lab/mcp-houjin-bangou v0.1.0 を公開しました。
+@sugukuru/mcp-houjin-bangou v0.1.0 を公開しました。
 
 国税庁 法人番号 Web-API Ver.4.0 を MCP から使うためのサーバです。
 Tools / Prompts / Resources / Completion / Logging / Pagination / Server Card を実装しています。
