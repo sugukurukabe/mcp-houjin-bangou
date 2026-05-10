@@ -90,6 +90,7 @@ NTA_APPLICATION_ID=your-id pnpm smoke:live
 ```
 
 成功すると `/4/num` と `/4/name` の両方が確認されます。
+live smoke では、仕様書サンプル番号ではなく、本番 API で実在する法人番号 `7000012050002` を使います。
 
 Claude Desktop または Cursor で:
 

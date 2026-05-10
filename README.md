@@ -53,6 +53,7 @@ NTA_APPLICATION_ID=your-id pnpm smoke:live
 ```
 
 The ID is never printed. The command verifies both `/4/num` and `/4/name`.
+The live smoke uses a known real NTA corporate number (`7000012050002`), not the fictional numbers shown in NTA sample documents.
 
 > "株式会社スグクルの法人番号と本店所在地を教えて"
 

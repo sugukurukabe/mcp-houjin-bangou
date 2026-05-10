@@ -11,7 +11,9 @@ import { getEnv } from '../src/lib/env.js';
 import { Result } from '../src/lib/result.js';
 import { normalizeAndValidateCorporateNumber } from '../src/domain/check-digit.js';
 
-const SAMPLE_CORPORATE_NUMBER = '5111101000006';
+// 国税庁の実在法人番号を live smoke 用に使用する。
+// 仕様書サンプル番号は本番 API で count=0 になる場合があるため、live smoke では使わない。
+const SAMPLE_CORPORATE_NUMBER = '7000012050002';
 
 async function main(): Promise<void> {
   const env = getEnv();
