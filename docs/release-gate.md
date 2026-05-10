@@ -1,4 +1,4 @@
-# v0.1.0 Release Gate Checklist
+# v0.2.0 Release Gate Checklist
 
 Release date target: **2026-05-22**
 
@@ -91,7 +91,7 @@ Release date target: **2026-05-22**
 
 ## リリースアナウンス / Release announcement
 
-- [ ] Zenn 記事ドラフト完成 (`docs/articles/zenn-v0.1.0.md`)
+- [ ] Zenn 記事ドラフト完成 (`docs/articles/zenn-v0.2.0.md`)
 - [ ] Zenn 記事公開
 - [x] X / HN / 指名レビューは非露出方針で deprecated 化
 - [ ] v0.2.0 実装ブランチの準備
@@ -108,7 +108,7 @@ Release date target: **2026-05-22**
 
 ## 品質ゲート通過後の最終手順 / Final steps
 
-1. `git tag -a v0.1.0 -m "v0.1.0 — 国税庁法人番号 MCP の最初のリリース"`
+1. `git tag -a v0.2.0 -m "v0.2.0 — 国税庁法人番号 MCP の最初のリリース"`
 2. `git push origin main --tags`
 3. GitHub Actions が自動で npm publish + GitHub Release 作成
 4. npm レジストリで公開を確認 (`pnpm info @sugukuru-labs/mcp-houjin-bangou`)

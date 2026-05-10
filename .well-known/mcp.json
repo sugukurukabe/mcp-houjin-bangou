@@ -1,6 +1,6 @@
 {
   "name": "@sugukuru-labs/mcp-houjin-bangou",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "MCP server for Japan National Tax Agency Corporate Number Web-API (Ver.4.0). Read-only, anonymous, full 7-primitive activation with deterministic company-name normalization.",
   "protocol_version": "2025-11-25",
   "homepage": "https://github.com/sugukuru-labs/mcp-houjin-bangou",

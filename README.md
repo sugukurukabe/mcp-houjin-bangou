@@ -124,7 +124,7 @@ We **read the NTA spec §4.6.2** and found that `target=1` already handles:
 
 | Version | ETA | Highlights |
 |---|---|---|
-| **v0.1.0** | 2026-05 | 5 tools + 7 primitives + Server Card |
+| **v0.2.0** | 2026-05 | 5 tools + 7 primitives + Server Card |
 | v0.2.0 | 2026-06 | MCP **Prompts** (business-card → DB / sales-list enrichment / customer-master dedup) + UI Resources |
 | v0.3.0 | 2026-07 | Integration with **Qualified Invoice Issuer** (T番号) API — same application ID, doubles B2B KYC value |
 | v0.5.0 | 2026-09 | Hosted edition + **Enterprise-Managed Authorization** (SEP-990) + **OAuth Client Credentials** + **Tasks** primitive (SEP-1699) for diff ingestion |
