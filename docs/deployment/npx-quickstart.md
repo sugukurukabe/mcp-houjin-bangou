@@ -4,7 +4,7 @@
 
 ## 前提
 
-- Node.js 20.11.1 以上
+- Node.js 20.19.0 以上
 - 国税庁アプリケーション ID ([getting-started.md](../getting-started.md) 参照)
 
 ## 起動

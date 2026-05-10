@@ -15,7 +15,7 @@
 
 ## 2. 動作環境
 
-- **Node.js**: 20.11.1 以上 (`.nvmrc` で固定)
+- **Node.js**: 20.19.0 以上 (`.nvmrc` で固定)
 - **pnpm**: 9 以上 (推奨、npm/yarn でも可)
 - **MCP Host**: Claude Desktop / Cursor / VS Code Copilot / Goose / MCPJam 等
 

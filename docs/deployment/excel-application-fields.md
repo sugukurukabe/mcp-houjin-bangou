@@ -149,7 +149,7 @@ Claude Desktop / Cursor / VS Code Copilot 等の MCP クライアントから自
             ▼
 ┌─────────────────────────┐
 │ Sugukuru MCP Server     │
-│ (Node.js 20.11+)        │
+│ (Node.js 20.19+)        │
 │ ├ Streamable HTTP       │
 │ ├ 5 MCP Tools           │
 │ ├ 3 MCP Prompts         │

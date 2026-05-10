@@ -124,7 +124,7 @@ NTA_APPLICATION_ID=your-id pnpm smoke:live
 
 **原因**: Node.js < 18 を使用。
 
-**対処**: Node.js 20.11.1 以上に upgrade (`.nvmrc` 参照)。
+**対処**: Node.js 20.19.0 以上に upgrade (`.nvmrc` 参照)。
 
 ## 詳細なログを取りたい
 

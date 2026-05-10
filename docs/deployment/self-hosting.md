@@ -4,7 +4,7 @@
 
 ## 前提
 
-- Node.js 20.11.1 (本番では LTS を推奨)
+- Node.js 20.19.0 (本番では LTS を推奨)
 - 国税庁 Web-API アプリケーション ID
 - systemd / Docker Compose / pm2 / supervisord 等のプロセス管理ツール
 

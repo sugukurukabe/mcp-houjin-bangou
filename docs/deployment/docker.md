@@ -19,7 +19,7 @@
 
 ```dockerfile
 # Stage 1: build
-FROM node:20.11.1-slim AS build
+FROM node:20.19.0-slim AS build
 WORKDIR /build
 RUN corepack enable
 COPY package.json pnpm-lock.yaml ./
